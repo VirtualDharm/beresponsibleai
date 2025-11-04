@@ -9,7 +9,7 @@ const showcaseImages = [
   "https://assets.emergent.sh/assets/showcase/6.png",
 ];
 
-const AuthSection = () => {
+const AuthSection = ({ onLogin }) => { // Accept onLogin as a prop
   const [currentIndex, setCurrentIndex] = useState(2);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -50,7 +50,13 @@ const AuthSection = () => {
           </span>
           <div className="mt-4 flex items-center justify-center">
             <p className="text-center text-[14px] font-medium leading-5 tracking-[-0.15px] text-white md:text-[16px]">Already have an account?</p>
-            <p className="cursor-pointer ml-2 text-center font-brockmann text-[14px] font-medium leading-5 tracking-[-0.15px] text-[#80FFF9] underline md:text-[16px]">Sign in</p>
+            {/* Add onClick handler here */}
+            <p
+              onClick={onLogin}
+              className="cursor-pointer ml-2 text-center font-brockmann text-[14px] font-medium leading-5 tracking-[-0.15px] text-[#80FFF9] underline md:text-[16px]"
+            >
+              Sign in
+            </p>
           </div>
         </div>
         {/* Form controls */}
