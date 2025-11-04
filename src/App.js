@@ -1,42 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import AuthSection from './components/AuthSection';
-import MeetEmergentSection from './components/MeetEmergentSection';
-import FeaturesSection from './components/FeaturesSection';
-import PricingSection from './components/PricingSection';
-import ProductVideoSection from './components/ProductVideoSection';
-import FAQSection from './components/FAQSection';
-import FillerSection from './components/FillerSection';
-import Footer from './components/Footer';
-import Dashboard from './components/Dashboard'; // Import the new Dashboard component
+// Import your new page components
+import LandingPage from './pages/LandingPage';
+import DashboardPage from './pages/DashboardPage';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  if (isLoggedIn) {
-    return <Dashboard />;
-  }
-
   return (
-    <main className="relative" style={{ backgroundImage: "url('https://assets.emergent.sh/assets/landing-page/landing-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-      <img src="https://assets.emergent.sh/assets/landing-light.png" alt="Overlay" className="fixed inset-0 w-full h-full pointer-events-none" style={{ mixBlendMode: 'screen', opacity: 0.5 }} />
-      <Header />
-      <AuthSection onLogin={handleLogin} /> {/* Pass the login handler */}
-      <div className="relative pt-[150px]">
-        <MeetEmergentSection />
-        <FeaturesSection />
-        <PricingSection />
-        <ProductVideoSection />
-        <FAQSection />
-        <FillerSection />
-        <Footer />
-      </div>
-    </main>
+    <Router>
+      <Routes>
+        {/* Route for the landing page */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* Route for the dashboard after logging in */}
+        <Route path="/dashboard" element={<DashboardPage />} />
+
+        {/* You can add more routes here, for example:
+        <Route path="/home" element={<DashboardPage />} /> 
+        */}
+      </Routes>
+    </Router>
   );
 }
 
