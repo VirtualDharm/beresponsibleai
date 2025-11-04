@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Brockmann";
+  src: url("https://assets.emergent.sh/assets/fonts/brockmann/Brockmann-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Brockmann";
+  src: url("https://assets.emergent.sh/assets/fonts/brockmann/Brockmann-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Ndot";
+  /* A fallback font might be needed if Ndot is not available or licensed */
+  src: local("Arial");
+}
+
+body {
+  background-color: #000;
+  color: white;
+}
+
+.get-started-button::before {
+  content: "";
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease-in-out infinite;
+}
+
+@keyframes gradient-x {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
