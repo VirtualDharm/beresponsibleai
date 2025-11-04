@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 
 // You would typically import these images or use URLs
 const showcaseImages = [
@@ -9,7 +10,7 @@ const showcaseImages = [
   "https://assets.emergent.sh/assets/showcase/6.png",
 ];
 
-const AuthSection = ({ onLogin }) => { // Accept onLogin as a prop
+const AuthSection = () => { // Removed onLogin from props
   const [currentIndex, setCurrentIndex] = useState(2);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -50,13 +51,14 @@ const AuthSection = ({ onLogin }) => { // Accept onLogin as a prop
           </span>
           <div className="mt-4 flex items-center justify-center">
             <p className="text-center text-[14px] font-medium leading-5 tracking-[-0.15px] text-white md:text-[16px]">Already have an account?</p>
-            {/* Add onClick handler here */}
-            <p
-              onClick={onLogin}
+            
+            {/* Replace the <p> tag with a <Link> component */}
+            <Link 
+              to="/dashboard"
               className="cursor-pointer ml-2 text-center font-brockmann text-[14px] font-medium leading-5 tracking-[-0.15px] text-[#80FFF9] underline md:text-[16px]"
             >
               Sign in
-            </p>
+            </Link>
           </div>
         </div>
         {/* Form controls */}
