@@ -50,7 +50,7 @@ const MeetEmergentSection = () => {
   }, [subIndex, placeholderIndex]);
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-20 md:py-0">
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-20 md:py-0 backdrop-blur-sm bg-white/5">
       <div className="my-auto flex flex-col gap-[40px] container items-center">
         {/* Top Banner Link */}
         <a target="_blank" rel="noopener noreferrer" className="mx-auto flex w-max items-center gap-2 rounded-lg bg-[#C1F5EF] px-5 py-2 text-black transition-transform hover:scale-105" href="https://vsc.is/seed-funding-yc-dalton-caldwell-and-soma-capital-led-by-gokul-rajaram">

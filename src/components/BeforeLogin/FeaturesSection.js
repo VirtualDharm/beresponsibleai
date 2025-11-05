@@ -1,58 +1,92 @@
-import React, { useState } from 'react';
+import React from "react";
 
-const features = [
+// Data for the feature cards on the right
+const featureCards = [
   {
-    id: 'apps',
-    title: 'Build websites and mobile apps',
-    description: 'Transform your ideas into fully functional websites and mobile apps with instant deployment, seamless data connections, and powerful scalability.',
-    image: 'https://assets.emergent.sh/assets/landing-page/mobile.png',
-    icon: (isActive) => (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M20.75 10.75C21.0815 10.75 21.3994 10.8818 21.6338 11.1162C21.8682 11.3506 22 11.6685 22 12V20.75C22 21.0815 21.8682 21.3994 21.6338 21.6338C21.3994 21.8682 21.0815 22 20.75 22H14.5C14.1685 22 13.8506 21.8682 13.6162 21.6338C13.3818 21.3994 13.25 21.0815 13.25 20.75V12C13.25 11.6685 13.3818 11.3506 13.6162 11.1162C13.8506 10.8818 14.1685 10.75 14.5 10.75H20.75ZM18.25 2C18.5815 2 18.8994 2.13179 19.1338 2.36621C19.3682 2.60063 19.5 2.91848 19.5 3.25V9.5H17V4.5H4.5V13.25H12V19.5H4.5V17H9.5V15.75H3.25C2.91848 15.75 2.60063 15.6182 2.36621 15.3838C2.13179 15.1494 2 14.8315 2 14.5V3.25C2 2.91848 2.13179 2.60063 2.36621 2.36621C2.60063 2.13179 2.91848 2 3.25 2H18.25ZM15.75 13.25V19.5H19.5V13.25H15.75Z" fill={isActive ? "url(#paint0_linear_features)" : "currentColor"}></path>
-        <defs><linearGradient id="paint0_linear_features" x1="2" y1="12" x2="22" y2="12" gradientUnits="userSpaceOnUse"><stop stopColor="#80FFF9"></stop><stop offset="1" stopColor="white"></stop></linearGradient></defs>
-      </svg>
-    ),
+    imageSrc:
+      "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c1671c649958c67969d2_e2e.webp",
+    altText: "Screenshot of scheduling agent dashboard",
+    title: "Scheduler Saves You From Manual Outreach",
+    description:
+      "Schedulers are drowning in post-it reminders, texts, and software solutions. Alden's end-to-end scheduling agent automates shift coverage around the clock, learning your team’s preferences, filling schedule gaps, and handling callouts. It customizes outreach via text, voice, and email, while keeping your EHR updated in real time.",
   },
-  // Add other features here...
+  {
+    imageSrc:
+      "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c20e69d0d522d9ee43a0_ai-call.webp",
+    altText: "A view of message center",
+    title: "Call Center Agent Takes Action 24/7",
+    description:
+      "Caregivers and client calls sit getting redirected and waiting for answers. Handle caregiver and clients calls at scale with 24/7 voice AI built for home care. Instantly triage callouts, reschedule visits, confirm caregiver availability, and keep patients informed — in any language. Alden's agent can escalate urgent care issues or fill open shifts automatically, so your coordinators only step in when it truly needs a human touch.",
+  },
+  {
+    imageSrc:
+      "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c265c3c1b8befeddd801_e2d2485679e9f3aebb46151c4d5d69f2_caregiver-exp-manager.webp",
+    altText: "Caregiver Experience Manager",
+    title: "Caregiver Manager Onboards Seamlessly",
+    description:
+      "Unclear schedules, delayed responses, and inconsistent communications can burn your caregiver team out. Don’t lose great hires to silence. Alden's platform keeps caregivers engaged from day one — checking in, collecting skills, confirming availability, and keeping them compliant so they’re always ready for their next shift.",
+  },
 ];
 
 const FeaturesSection = () => {
-  const [selectedFeature, setSelectedFeature] = useState(0);
-
   return (
-    <section className="features-section py-[150px] px-6">
-      <p className="text-center font-brockmann text-[32px] font-medium leading-9 text-white md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.2)' }}>
-        What can Emergent <br /> do for you?
-      </p>
-      <p className="mx-auto mt-4 max-w-[575px] text-center font-inter text-[15px] font-medium leading-6 text-[#666] md:text-[16px]">
-        From concept to deployment, Emergent handles every aspect of software development so you can focus on what matters most - your vision!
-      </p>
-      <div className="mx-auto mt-8 max-w-7xl md:mt-20 md:px-4">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div>
-            {features.map((feature, index) => (
-              <div key={feature.id} onClick={() => setSelectedFeature(index)} className="cursor-pointer border-b border-white/10 py-6 transition-all duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-1">
-                    <div className="flex items-start space-x-4">
-                      <div className="min-h-6 min-w-6 text-white">{feature.icon(selectedFeature === index)}</div>
-                      <h3 className={`text-[18px] font-medium leading-6 transition-all duration-300 md:text-[22px] ${selectedFeature === index ? 'text-[#80FFF9]' : 'text-white'}`}>
-                        {feature.title}
-                      </h3>
-                    </div>
-                    {selectedFeature === index && (
-                      <p className="!mt-4 font-inter text-[15px] font-medium leading-6 text-[#666] md:text-[16px]">
-                        {feature.description}
-                      </p>
-                    )}
-                  </div>
-                </div>
+    // Section uses a light background to match the new design
+    <section
+      id="features"
+      className="bg-white text-gray-800 py-20 md:py-32 px-4 md:px-8"
+    >
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        {/* Left Content Column */}
+        <div className="lg:sticky top-28">
+          <div className="mb-6">
+            <div className="text-sm font-semibold tracking-wider bg-gray-200 text-gray-600 inline-block px-3 py-1 rounded">
+              FEATURES
+            </div>
+          </div>
+          <div className="mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900">
+              Work Smarter with Your 24/7 AI Coordinator
+            </h2>
+          </div>
+          <p className="text-base text-gray-600 mb-8">
+            Your AI coordination agent is built for the way you run your agency.
+            Mix and match modules for scheduling, communication, onboarding, and
+            client engagement — each tailored to your processes for maximum
+            impact. We can start with one custom use case, and expand to more as
+            you see ROI.
+          </p>
+          <a
+            href="#"
+            role="button"
+            className="inline-block bg-lime-300 text-black font-semibold py-3 px-8 rounded-full transition-transform hover:scale-105"
+          >
+            Get Started
+          </a>
+        </div>
+
+        {/* Right Content Column with Feature Cards */}
+        <div className="flex flex-col gap-8">
+          {featureCards.map((card, index) => (
+            <div
+              key={index}
+              className="bg-gray-100/80 p-6 rounded-2xl shadow-sm sticky top-32"
+            >
+              <div className="mb-6 overflow-hidden rounded-lg">
+                <img
+                  className="w-full h-auto"
+                  src={card.imageSrc}
+                  alt={card.altText}
+                  loading="lazy"
+                />
               </div>
-            ))}
-          </div>
-          <div className="relative hidden h-[480px] overflow-hidden rounded-lg bg-[#222] lg:block">
-            <img src={features[selectedFeature].image} alt={features[selectedFeature].title} className="h-full w-full object-cover" />
-          </div>
+              <div className="mb-3">
+                <h3 className="font-serif text-2xl font-bold text-gray-900">
+                  {card.title}
+                </h3>
+              </div>
+              <p className="text-sm text-gray-600">{card.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
