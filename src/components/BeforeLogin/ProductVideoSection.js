@@ -1,55 +1,58 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 const ProductVideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef(null);
 
-  const handleMouseMove = (e) => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    }
+  const handlePlay = () => {
+    setIsPlaying(true);
   };
 
-  const videoUrl = "https://www.youtube.com/embed/jF0WZu6r4KQ";
+  const videoUrl = "https://player.vimeo.com/video/1122907754?autopause=0&loop=0";
+  const thumbnailUrl = "https://cdn.prod.website-files.com/68d6459227d5920422431709/68daecca9c6aba97838a91bf_screen-hero-alt.avif";
+  const playIconUrl = "https://cdn.prod.website-files.com/68d6459227d5920422431709/68d86a61a85cb5aa3673c61b_6f638497a4cb3a9e2dc4220b892640bb_icon-play.svg";
 
   return (
-    <section className="py-[150px] px-4">
-      <div className="text-center">
-        <p className="font-ndot text-[14px] uppercase tracking-[1.4px] text-white/50">Product Video</p>
-        <span className="mt-4 block bg-gradient-to-r from-white to-[#81FF89] bg-clip-text text-center text-[30px] font-medium text-transparent md:text-[36px]">
-          See Emergent in Action
-        </span>
-      </div>
-
-      <div
-        ref={containerRef}
-        className="relative mx-auto mt-10 max-w-[1200px] h-[275px] md:h-[600px] rounded-[20px] bg-[#1A1A1A] p-3 cursor-pointer"
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => setIsPlaying(true)}
-      >
-        <iframe
-          src={isPlaying ? `${videoUrl}?autoplay=1` : videoUrl}
-          title="YouTube video player"
-          className="h-full w-full rounded-[20px]"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{ pointerEvents: isPlaying ? 'auto' : 'none' }}
-        ></iframe>
-
-        {!isPlaying && isHovered && (
+    // The main section now has a dark background to match the new design
+    <section className="bg-black py-20 md:py-24">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="video-container rounded-2xl overflow-hidden">
+          {/* Play Button and Label */}
           <div
-            className="absolute flex items-center justify-center whitespace-nowrap rounded-full bg-white px-5 py-1 font-semibold text-black transition-opacity duration-200"
-            style={{ left: mousePosition.x, top: mousePosition.y, transform: 'translate(-50%, -50%)', zIndex: 9999 }}
+            className={`play-button-container ${isPlaying ? 'hide' : ''}`}
+            onClick={handlePlay}
           >
-            Watch Film
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="ml-2 h-5 w-5"><path d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z" fill="black" stroke="black" strokeWidth="2"></path><path d="M8 10V7.22L12.8 10L8 12.78V10Z" fill="white"></path></svg>
+            <div className="button-play">
+              <img src={playIconUrl} loading="eager" alt="Play Icon" />
+            </div>
+            <div className="label-play">Watch 1 min demo</div>
+            <div className="button-blur"></div>
           </div>
-        )}
+
+          {/* Video Iframe Wrapper */}
+          <div className={`video-wrapper-outer ${isPlaying ? 'show' : ''}`}>
+            <div className="video-wrapper">
+              {isPlaying && (
+                <iframe
+                  id="myVimeo"
+                  src={`${videoUrl}&autoplay=1`}
+                  frameBorder="0"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
+          </div>
+
+          {/* Thumbnail Image */}
+          <div className={`thumbnail-wrapper ${isPlaying ? 'hide' : ''}`}>
+            <img
+              src={thumbnailUrl}
+              loading="eager"
+              alt="Video Thumbnail"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

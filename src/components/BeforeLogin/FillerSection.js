@@ -1,27 +1,107 @@
 import React from 'react';
 
-const FillerSection = () => {
-    return (
-        <section
-            className="relative flex w-full items-center justify-center md:h-screen"
-            style={{
-                backgroundImage: "url('https://assets.emergent.sh/assets/landing-page/landing-filler-background.png')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-            }}
-        >
-            <div className="z-10 text-center py-20 md:py-0">
-                <h2 className="w-full text-center text-[36px] font-semibold leading-[32px] tracking-[-1.92px] text-white md:text-[72px] md:leading-[72px] md:tracking-[-4.32px]">
-                    Start building <br /> on Emergent today.
-                </h2>
-                <button className="get-started-button relative mx-auto mt-8 flex items-center gap-3 rounded-full bg-white px-7 py-3 font-brockmann text-[16px] font-semibold tracking-wide text-[#0E0E0F] transition-colors md:mt-10">
-                    Get Started
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" className="h-6 w-6 object-contain"><path fillRule="evenodd" clipRule="evenodd" d="M19.6395 11.3816C20.1202 11.8622 20.1202 12.6416 19.6395 13.1222L14.1011 18.6606C13.6204 19.1412 12.8412 19.1412 12.3606 18.6606C11.8798 18.1799 11.8798 17.4007 12.3606 16.92L15.7979 13.4826L5.23081 13.4826C4.55106 13.4826 4 12.9316 4 12.2518C4 11.5722 4.55106 11.0211 5.23081 11.0211L15.7979 11.0211L12.3606 7.5837C11.8798 7.10307 11.8798 6.32381 12.3606 5.84318C12.8412 5.36249 13.6204 5.36249 14.1011 5.84318L19.6395 11.3816Z" fill="#0E0E0F"></path></svg>
-                </button>
-            </div>
-            <img src="https://assets.emergent.sh/assets/landing-page/footer-filler.gif" className="absolute bottom-[50px] mx-auto h-[80px] w-[80px] cursor-pointer md:bottom-[100px] md:h-[150px] md:w-[150px]" alt="Emergent Logo" />
-        </section>
-    );
+const logos = [
+  {
+    name: 'Novo Nordisk',
+    src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
+    alt: 'Novo Nordisk Logo'
+  },
+  {
+    name: 'Johnson & Johnson',
+    src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
+    alt: 'Johnson & Johnson Logo'
+  },
+  {
+    name: 'Corteva Catalyst',
+    src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
+    alt: 'Corteva Catalyst Logo'
+  },
+  {
+    name: 'IFF',
+    src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
+    alt: 'IFF Logo'
+  },
+  {
+    name: 'Novonesis',
+    src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
+    alt: 'Novonesis Logo'
+  },
+  {
+    name: 'Argenx',
+    src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
+    alt: 'Argenx Logo'
+  },
+];
+
+const Testimonial = {
+  quote: "Cradle’s AI-based protein design platform provides easy access and acceleration to protein optimization for the discovery pipeline.",
+  author: "Eswar Narayanan",
+  title: "Director, Corteva Catalyst",
+  authorImage: "https://framerusercontent.com/images/xoFIG6wSMMQfs7gvcNlR9GVaLck.jpg",
+  companyLogo: "https://framerusercontent.com/images/15Ld3p6d773yFp3y2w3cMb0.svg"
 };
 
-export default FillerSection;       
+const FillerSection = () => {
+  return (
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        {/* Section Header */}
+        <div className="mb-12 text-center lg:text-left">
+          <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
+            <div className="h-2 w-2 bg-blue-600 rounded-sm"></div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-gray-500">
+              Trusted by the best
+            </p>
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 max-w-4xl mx-auto lg:mx-0">
+            Scientific teams at Novo Nordisk, Johnson & Johnson, and IFF all use Cradle to engineer proteins faster.
+          </h2>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          {/* Logos Grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {logos.map((logo, index) => (
+              <div key={index} className="flex h-32 items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="max-h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Testimonial Card */}
+          <div className="relative rounded-2xl border border-gray-200 p-8">
+            <h3 className="mb-8 text-2xl font-medium text-gray-800">
+              "{Testimonial.quote}"
+            </h3>
+            <div className="flex items-center gap-4">
+              <img
+                src={Testimonial.companyLogo}
+                alt="Corteva Logo"
+                className="h-10 w-10"
+              />
+              <div>
+                <p className="font-semibold text-gray-900">{Testimonial.author}</p>
+                <p className="text-sm text-gray-600">{Testimonial.title}</p>
+              </div>
+            </div>
+            <div className="absolute bottom-0 right-0 h-48 w-48 lg:h-64 lg:w-64">
+              <img
+                src={Testimonial.authorImage}
+                alt={Testimonial.author}
+                className="h-full w-full object-cover object-left-top"
+                style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0 100%)' }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default FillerSection;
