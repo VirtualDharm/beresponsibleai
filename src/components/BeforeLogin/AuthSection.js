@@ -42,6 +42,21 @@ const AuthSection = () => { // Removed onLogin from props
   return (
     <section className="authentication-section flex h-screen">
       {/* Left side */}
+      <div className="relative hidden flex-1 items-center justify-center p-5 md:flex" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover scale-[1.22]">
+          <source src="https://assets.emergent.sh/assets/videos/clouds.mp4" type="video/mp4" />
+        </video>
+        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+          {showcaseImages.map((src, index) => (
+            <div key={index} className="absolute flex items-center justify-center" style={getStyle(index)}>
+              <div className="h-full w-full rounded-[20px] bg-gradient-to-b from-white/60 to-white/40 p-2 backdrop-blur-xl">
+                 <img src={src} alt={`Showcase ${index + 1}`} className="h-full w-full rounded-[16px] object-cover" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* Right side Carousel */}
       <div className="relative flex flex-1 flex-col items-center justify-center p-4">
         <img src="https://assets.emergent.sh/assets/Landing-Auth-Star.gif" className="h-12 w-auto cursor-pointer md:h-[64px] mb-4 z-10" alt="Emergent Logo" />
         <div className="text-center font-sans font-medium">
@@ -64,21 +79,6 @@ const AuthSection = () => { // Removed onLogin from props
         {/* Form controls */}
         <div className="w-full max-w-[414px] pt-4">
             {/* Buttons here, add functionality as needed */}
-        </div>
-      </div>
-      {/* Right side Carousel */}
-      <div className="relative hidden flex-1 items-center justify-center p-5 md:flex" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover scale-[1.22]">
-          <source src="https://assets.emergent.sh/assets/videos/clouds.mp4" type="video/mp4" />
-        </video>
-        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
-          {showcaseImages.map((src, index) => (
-            <div key={index} className="absolute flex items-center justify-center" style={getStyle(index)}>
-              <div className="h-full w-full rounded-[20px] bg-gradient-to-b from-white/60 to-white/40 p-2 backdrop-blur-xl">
-                 <img src={src} alt={`Showcase ${index + 1}`} className="h-full w-full rounded-[16px] object-cover" />
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

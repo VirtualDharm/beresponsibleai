@@ -11,7 +11,7 @@ import Footer from '../components/BeforeLogin/Footer';
 
 const LandingPage = () => {
   return (
-    <main className="relative" style={{ backgroundImage: "url('https://assets.emergent.sh/assets/landing-page/landing-bg.png')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+    <main className="relative" style={{  backgroundImage: "url('/bgimage.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <img src="https://assets.emergent.sh/assets/landing-light.png" alt="Overlay" className="fixed inset-0 w-full h-full pointer-events-none" style={{ mixBlendMode: 'screen', opacity: 0.5 }} />
       <Header />
       {/* Note: We no longer need to pass onLogin here */}

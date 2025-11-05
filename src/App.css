@@ -36,3 +36,88 @@
     transform: rotate(360deg);
   }
 }
+
+/* MeetEmergentSection */
+
+.tech-stack-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tech-stack-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .tech-stack-group {
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 0;
+  }
+  .tech-stack-group:last-child {
+    border-bottom: 0;
+  }
+}
+
+.tech-stack-title {
+  font-size: 14px;
+  line-height: 150%;
+  color: white;
+  opacity: 0.5;
+  text-align: center;
+  width: 100%;
+}
+
+.tech-stack-icons {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.tech-stack-icons.integrations {
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+  background-image: url('https://assets.rocket.new/rocket/tech-stack-white.webp');
+  background-size: 712px; /* Adjust size based on sprite sheet */
+}
+
+.tech-icon:hover {
+  opacity: 1;
+}
+
+/* Sprite positions */
+.tech-icon.flutter { background-position: 0 0; }
+.tech-icon.html { background-position: -44px 0; }
+.tech-icon.nextjs { background-position: -85px 0; }
+.tech-icon.react { background-position: -119px 0; background-size: 660px; }
+.tech-icon.github { background-position: -177px 0; }
+.tech-icon.supabase { background-position: -219px 0; }
+.tech-icon.figma { background-position: -260px 0; }
+.tech-icon.netlify { background-position: -295px 0; }
+.tech-icon.stripe { background-position: -340px 0; }
+.tech-icon.openai { background-position: -382px 0; }
+.tech-icon.anthropic { background-position: -298px 0; background-size: 500px; height: 20px; margin-top: 4px; }
+.tech-icon.gemini { background-position: -476px 0; }
+.tech-icon.perplexity { background-position: -520px 0; }
+.tech-icon.google-analytics { background-position: -560px 0; }
+.tech-icon.adsense { background-position: -600px 0; }
+.tech-icon.resend { background-position: -642px 0; }
+.tech-icon.twilio { background-position: -688px 0; }
+
+/* MeetEmergentSection */

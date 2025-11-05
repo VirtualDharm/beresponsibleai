@@ -1,67 +1,149 @@
 import React, { useState, useEffect } from 'react';
+import '../../App.css';
 
-const placeholders = [
-    "Build me a dashboard for my business...",
-    "Build me a game where players can...",
-    "Build me a personal portfolio website...",
+const animatedWords = ["internal tool.", "web app.", "mobile app.", "chrome extension."];
+const placeholderTexts = [
+  "A dashboard for my business that shows key metrics...",
+  "An app for tracking my daily habits and progress...",
+  "A game where players can build and trade virtual items...",
+  "A portfolio website to showcase my design work...",
 ];
 
 const MeetEmergentSection = () => {
-    const [placeholder, setPlaceholder] = useState('');
-    const [index, setIndex] = useState(0);
-    const [subIndex, setSubIndex] = useState(0);
-    const [reverse, setReverse] = useState(false);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [placeholder, setPlaceholder] = useState('');
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
+  const [subIndex, setSubIndex] = useState(0);
+  const [reverse, setReverse] = useState(false);
 
-    useEffect(() => {
-        if (subIndex === placeholders[index].length + 1 && !reverse) {
-            setReverse(true);
-            return;
-        }
+  // Effect for the animated word flipping
+  useEffect(() => {
+    const wordInterval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % animatedWords.length);
+    }, 2000); // Change word every 2 seconds
 
-        if (subIndex === 0 && reverse) {
-            setReverse(false);
-            setIndex((prev) => (prev + 1) % placeholders.length);
-            return;
-        }
+    return () => clearInterval(wordInterval);
+  }, []);
 
-        const timeout = setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? -1 : 1));
-        }, reverse ? 75 : 150);
+  // Effect for the typing placeholder animation
+  useEffect(() => {
+    if (subIndex === placeholderTexts[placeholderIndex].length + 1 && !reverse) {
+      setTimeout(() => setReverse(true), 2000); // Pause before deleting
+      return;
+    }
 
-        return () => clearTimeout(timeout);
-    }, [subIndex, index, reverse]);
+    if (subIndex === 0 && reverse) {
+      setReverse(false);
+      setPlaceholderIndex((prev) => (prev + 1) % placeholderTexts.length);
+      return;
+    }
 
-    useEffect(() => {
-        setPlaceholder(placeholders[index].substring(0, subIndex));
-    }, [subIndex, index]);
+    const timeout = setTimeout(() => {
+      setSubIndex((prev) => prev + (reverse ? -1 : 1));
+    }, reverse ? 50 : 100);
 
+    return () => clearTimeout(timeout);
+  }, [subIndex, placeholderIndex, reverse]);
 
-    return (
-        <section className="hero-section py-[150px]">
-            <div className="mx-auto w-full max-w-4xl px-6">
-                <img src="https://assets.emergent.sh/assets/Landing-Hero-E.gif" className="mx-auto h-14 w-14 cursor-pointer md:h-[80px] md:w-[80px] mb-4" alt="Emergent Logo" />
-                <p className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-white md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.2)' }}>
-                    Meet Emergent
-                </p>
-                <p className="mx-auto mt-4 max-w-[550px] text-center text-base font-medium leading-6 text-[#666] font-inter md:text-[16px]">
-                    Emergent turns concepts into production-ready applications, saving time and eliminating technical barriers.
-                </p>
-                <div className="relative mt-8 h-[140px] rounded-[20px] border-[4px] border-[#333] p-[2px] md:mt-11 md:h-[160px]">
-                    <textarea
-                        className="relative h-full w-full resize-none rounded-[14px] bg-[#0F0F0F] p-4 pr-12 text-[15px] text-[#DDDDE6] outline-none focus:ring-1 focus:ring-white/50 md:text-[16px]"
-                        placeholder={placeholder + '|'}
-                    />
-                    <div className="absolute right-[10px] bottom-[10px] cursor-pointer rounded-full bg-white p-[6px]">
-                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M11.1303 4.61244C11.611 4.13179 12.3903 4.13179 12.871 4.61244L18.4093 10.1509C18.89 10.6315 18.89 11.4108 18.4093 11.8914C17.9287 12.3721 17.1495 12.3721 16.6688 11.8914L13.2314 8.45408V19.0211C13.2314 19.7009 12.6803 20.252 12.0006 20.252C11.321 20.252 10.7699 19.7009 10.7699 19.0211V8.45408L7.33248 11.8914C6.85185 12.3721 6.07259 12.3721 5.59196 11.8914C5.11127 11.4108 5.11127 10.6315 5.59196 10.1509L11.1303 4.61244Z" fill="#131314"></path></svg>
-                    </div>
-                </div>
-                 <button className="get-started-button mx-auto mt-8 flex items-center gap-3 rounded-full bg-white px-7 py-3 font-brockmann text-[16px] font-semibold tracking-wide text-[#0E0E0F] transition-colors md:mt-10">
-                    Start Building
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" className="h-6 w-6 object-contain"><path fillRule="evenodd" clipRule="evenodd" d="M19.6395 11.3816C20.1202 11.8622 20.1202 12.6416 19.6395 13.1222L14.1011 18.6606C13.6204 19.1412 12.8412 19.1412 12.3606 18.6606C11.8798 18.1799 11.8798 17.4007 12.3606 16.92L15.7979 13.4826L5.23081 13.4826C4.55106 13.4826 4 12.9316 4 12.2518C4 11.5722 4.55106 11.0211 5.23081 11.0211L15.7979 11.0211L12.3606 7.5837C11.8798 7.10307 11.8798 6.32381 12.3606 5.84318C12.8412 5.36249 13.6204 5.36249 14.1011 5.84318L19.6395 11.3816Z" fill="#0E0E0F"></path></svg>
-                </button>
+  useEffect(() => {
+    setPlaceholder(placeholderTexts[placeholderIndex].substring(0, subIndex));
+  }, [subIndex, placeholderIndex]);
+
+  return (
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-20 md:py-0">
+      <div className="my-auto flex flex-col gap-[40px] container items-center">
+        {/* Top Banner Link */}
+        <a target="_blank" rel="noopener noreferrer" className="mx-auto flex w-max items-center gap-2 rounded-lg bg-[#C1F5EF] px-5 py-2 text-black transition-transform hover:scale-105" href="https://vsc.is/seed-funding-yc-dalton-caldwell-and-soma-capital-led-by-gokul-rajaram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" className="text-black"><path d="M152,224a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,224ZM128,112a12,12,0,1,0-12-12A12,12,0,0,0,128,112Zm95.62,43.83-12.36,55.63a16,16,0,0,1-25.51,9.11L158.51,200h-61L70.25,220.57a16,16,0,0,1-25.51-9.11L32.38,155.83a16.09,16.09,0,0,1,3.32-13.71l28.56-34.26a123.07,123.07,0,0,1,8.57-36.67c12.9-32.34,36-52.63,45.37-59.85a16,16,0,0,1,19.6,0c9.34,7.22,32.47,27.51,45.37,59.85a123.07,123.07,0,0,1,8.57,36.67l28.56,34.26A16.09,16.09,0,0,1,223.62,155.83ZM99.43,184h57.14c21.12-37.54,25.07-73.48,11.74-106.88C156.55,47.64,134.49,29,128,24c-6.51,5-28.57,23.64-40.33,53.12C74.36,110.52,78.31,146.46,99.43,184Zm-15,5.85Q68.28,160.5,64.83,132.16L48,152.36,60.36,208l.18-.13ZM208,152.36l-16.83-20.2q-3.42,28.28-19.56,57.69l23.85,18,.18.13Z"></path></svg>
+          <p className="text-[12px] font-medium uppercase leading-[150%] text-black">ROCKET RAISES $15M SEED FUNDING</p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256" className="text-black"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+        </a>
+
+        {/* Headlines */}
+        <div className="flex w-full flex-col gap-2 overflow-hidden text-center">
+          <p className="mx-auto w-7/12 text-[48px] font-semibold leading-[120%] text-white max-sm:w-full max-sm:text-[32px]">
+            Think It. Type It. Launch It.
+          </p>
+          <div className="mx-auto flex w-[620px] flex-col items-center justify-center gap-1 overflow-hidden max-sm:w-full">
+            <div className="flex flex-wrap justify-center">
+              <p className="text-[20px] leading-[140%] text-white max-sm:text-[18px]">
+                Build production-ready
+              </p>
+              <div className="relative ml-1 h-[28px] w-[150px] text-left">
+                {animatedWords.map((word, index) => (
+                  <span key={word} className={`absolute inset-0 transition-transform duration-500 ease-in-out ${index === currentWordIndex ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
+                    <p className="text-[20px] font-medium leading-[140%] text-white underline underline-offset-2 max-sm:text-[18px]">
+                      {word}
+                    </p>
+                  </span>
+                ))}
+              </div>
             </div>
-        </section>
-    );
+          </div>
+        </div>
+
+        {/* Textarea Form */}
+        <form className="h-full w-full max-w-[766px] overflow-hidden">
+          <div className="relative mx-auto flex w-full flex-col overflow-hidden rounded-[20px] bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.1)]">
+            <textarea
+              name="prompt"
+              rows="4"
+              className="placeholder:text-black/50 block min-h-[80px] w-full resize-none overflow-auto bg-transparent px-5 py-5 pb-0 text-[14px] leading-[150%] text-black placeholder:text-[14px] focus:outline-none"
+              placeholder={placeholder ? `${placeholder}|` : 'What can I build for you today?'}
+              autoFocus
+            />
+            <div className="flex w-full items-center justify-between px-5 pb-3 pt-3">
+              <div className="flex gap-2">
+                {/* Attach Button */}
+                <button type="button" className="group relative flex h-[26px] w-[26px] cursor-pointer items-center justify-center rounded-md bg-black/10 text-black transition-colors hover:bg-black/20">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4"><path d="M209.66,122.34a8,8,0,0,1,0,11.32l-82.05,82a56,56,0,0,1-79.2-79.21L147.67,35.73a40,40,0,1,1,56.61,56.55L105,193A24,24,0,1,1,71,159L154.3,74.38A8,8,0,1,1,165.7,85.6L82.39,170.31a8,8,0,1,0,11.27,11.36L192.93,81A24,24,0,1,0,159,47L59.76,147.68a40,40,0,1,0,56.53,56.62l82.06-82A8,8,0,0,1,209.66,122.34Z"></path></svg>
+                </button>
+                {/* Import Button */}
+                <button type="button" className="hidden items-center gap-1 rounded-md bg-black/10 px-3 py-1 text-xs text-black transition-colors hover:bg-black/20 sm:flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="14" height="14"><path fill="#0acf83" d="M50 300c27.6 0 50-22.4 50-50v-50H50c-27.6 0-50 22.4-50 50s22.4 50 50 50z"></path><path fill="#a259ff" d="M0 150c0-27.6 22.4-50 50-50h50v100H50c-27.6 0-50-22.4-50-50z"></path><path fill="#f24e1e" d="M0 50C0 22.4 22.4 0 50 0h50v100H50C22.4 100 0 77.6 0 50z"></path><path fill="#ff7262" d="M100 0h50c27.6 0 50 22.4 50 50s-22.4 50-50 50h-50V0z"></path><path fill="#1abcfe" d="M200 150c0 27.6-22.4 50-50 50s-50-22.4-50-50 22.4-50 50-50 50 22.4 50 50z"></path></svg>
+                    Import
+                </button>
+              </div>
+              <button type="submit" className="flex h-[26px] w-[26px] items-center justify-center rounded-md bg-black/10 text-black transition-colors hover:bg-black/20" aria-label="Submit prompt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        {/* Tech Stack Icons */}
+        <div className="tech-stack-container mx-auto mt-4 flex flex-col rounded-[20px] max-sm:w-full md:flex-row">
+            <div className="tech-stack-group border-r border-white/20">
+                <p className="tech-stack-title">Frameworks</p>
+                <div className="tech-stack-icons">
+                    <div className="tech-icon flutter"></div>
+                    <div className="tech-icon html"></div>
+                    <div className="tech-icon nextjs"></div>
+                    <div className="tech-icon react"></div>
+                </div>
+            </div>
+            <div className="tech-stack-group">
+                <p className="tech-stack-title">Integrations</p>
+                <div className="tech-stack-icons integrations">
+                    <div className="tech-icon github"></div>
+                    <div className="tech-icon supabase"></div>
+                    <div className="tech-icon figma"></div>
+                    <div className="tech-icon netlify"></div>
+                    <div className="tech-icon stripe"></div>
+                    <div className="tech-icon openai"></div>
+                    <div className="tech-icon anthropic"></div>
+                    <div className="tech-icon gemini"></div>
+                    <div className="tech-icon perplexity"></div>
+                    <div className="tech-icon google-analytics"></div>
+                    <div className="tech-icon adsense"></div>
+                    <div className="tech-icon resend"></div>
+                    <div className="tech-icon twilio"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default MeetEmergentSection;
