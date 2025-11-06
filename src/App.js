@@ -1,23 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Import your new page components
+// Import Page Components
 import LandingPage from './pages/LandingPage';
 import DashboardPage from './pages/DashboardPage';
+
+// Import Protector Component
+import AuthProtector from './components/AuthProtector';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Route for the landing page */}
+        {/* Public Routes */}
         <Route path="/" element={<LandingPage />} />
 
-        {/* Route for the dashboard after logging in */}
-        <Route path="/dashboard" element={<DashboardPage />} />
-
-        {/* You can add more routes here, for example:
-        <Route path="/home" element={<DashboardPage />} /> 
-        */}
+        {/* Protected Route */}
+        <Route
+          path="/dashboard"
+          element={
+            <AuthProtector>
+              <DashboardPage />
+            </AuthProtector>
+          }
+        />
       </Routes>
     </Router>
   );
