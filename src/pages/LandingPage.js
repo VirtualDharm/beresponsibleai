@@ -16,7 +16,7 @@ const LandingPage = () => {
       <Header />
       {/* Note: We no longer need to pass onLogin here */}
       <AuthSection />
-      <div className="relative pt-[150px]">
+      <div className="relative pt-[50px]">
         <MeetEmergentSection />
         <FeaturesSection />
         <PricingSection />

@@ -1,18 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '../../lib/supabaseClient';
+import { useAuth } from '../../context/AuthContext';
 import { SearchIcon, MoonIcon, BellIcon, AppIcon, ArrowDownIcon } from './Icons';
 
 const ChatHeader = () => {
+  const { user } = useAuth(); // Get the current user from context
+  const navigate = useNavigate();
+
+  // Logout handler function
+  const handleLogout = async () => {
+    console.log('Logging out user:', user?.email);
+    await supabase.auth.signOut();
+    navigate('/', { replace: true }); // Redirect to landing page after logout
+    console.log('User logged out successfully');
+  };
+
   return (
     <header className="flex h-16 flex-shrink-0 items-center justify-between border-b border-slate-700 bg-[#1e293b] px-6">
-      {/* GPT Model Selector */}
+      {/* GPT Model Selector (from original design) */}
       <div className="flex items-center gap-2">
         <span className="text-sm font-semibold text-white">GPT 4</span>
         <ArrowDownIcon />
       </div>
 
-      {/* Controls */}
+      {/* Controls (from original design) + User Info and Logout */}
       <div className="flex items-center gap-4">
-        <div className="relative">
+        <div className="relative hidden md:block">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           <input
             type="search"
@@ -23,9 +37,21 @@ const ChatHeader = () => {
         <button className="text-gray-400 hover:text-white"><MoonIcon /></button>
         <button className="text-gray-400 hover:text-white"><AppIcon /></button>
         <button className="text-gray-400 hover:text-white"><BellIcon /></button>
+
         <button className="rounded-lg bg-emerald-500 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-600">
           Try AI Pro
         </button>
+
+        {/* User Info and Logout Button */}
+        <div className="flex items-center gap-3 border-l border-slate-700 pl-4">
+          <span className="hidden text-sm text-gray-400 sm:block">{user?.email}</span>
+          <button
+            onClick={handleLogout}
+            className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+          >
+            Sign Out
+          </button>
+        </div>
       </div>
     </header>
   );

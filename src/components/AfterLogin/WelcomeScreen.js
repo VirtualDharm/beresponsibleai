@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAuth } from '../../context/AuthContext'; // Import the useAuth hook
 import { ArrowIcon } from './Icons';
 
 const suggestions = [
@@ -9,10 +10,19 @@ const suggestions = [
 ];
 
 const WelcomeScreen = () => {
+  // Get the user from the AuthContext
+  const { user } = useAuth();
+
+  // Determine the display name: Use full_name from metadata, or fall back to email
+  const displayName = user?.user_metadata?.full_name || user?.email || 'User';
+
   return (
     <div className="flex h-full flex-col items-center justify-center text-center">
       <h1 className="text-4xl font-bold">
-        <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">Welcome, John Doe</span>
+        {/* Use the dynamic displayName */}
+        <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+          Welcome, {displayName}
+        </span>
       </h1>
       <p className="mt-2 text-3xl text-gray-400">May I be of assistance today?</p>
 
