@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { supabase } from '../../lib/supabaseClient';
 import SignInForm from '../auth/SignInForm';
 import SignUpForm from '../auth/SignUpForm';
 
+// Data for the carousel
 const showcaseImages = [
   "https://assets.emergent.sh/assets/showcase/1.png",
   "https://assets.emergent.sh/assets/showcase/2.png",
@@ -11,30 +13,38 @@ const showcaseImages = [
 ];
 
 const AuthSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(2);
+  // State for the authentication view ('default', 'signin', or 'signup')
+  const [authMode, setAuthMode] = useState('default');
+
+  // State for the carousel
+  const [currentIndex, setCurrentIndex] = useState(2); // Start with the 3rd image in center
   const [isHovered, setIsHovered] = useState(false);
 
-  // NEW: auth mode state
-  const [authMode, setAuthMode] = useState('default'); // default | signin | signup
-
+  // Carousel auto-advance logic
   useEffect(() => {
     const timer = setInterval(() => {
       if (!isHovered) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % showcaseImages.length);
       }
-    }, 2000);
+    }, 2000); // Change slide every 2 seconds
     return () => clearInterval(timer);
   }, [isHovered]);
 
-  const getStyle = (index) => {
+  // Function to calculate styles for each carousel card
+  const getCarouselCardStyle = (index) => {
     const offset = index - currentIndex;
     const isCenter = offset === 0;
     const isAdjacent = Math.abs(offset) === 1;
     const isVisible = isCenter || isAdjacent;
 
+    // These values control the carousel animation
+    const spacing = 520;
+    const sideCardScale = 0.9;
+    const sideCardOpacity = 0.7;
+
     return {
-      transform: `translateX(${offset * 520}px) scale(${isCenter ? 1 : 0.9})`,
-      opacity: isVisible ? (isCenter ? 1 : 0.7) : 0,
+      transform: `translateX(${offset * spacing}px) scale(${isCenter ? 1 : sideCardScale})`,
+      opacity: isVisible ? (isCenter ? 1 : sideCardOpacity) : 0,
       zIndex: isCenter ? 20 : (isAdjacent ? 10 : 0),
       width: isCenter ? '624px' : '420px',
       height: isCenter ? '356px' : '300px',
@@ -42,57 +52,75 @@ const AuthSection = () => {
     };
   };
 
-  // NEW: dynamic content renderer
+  // Google Sign-In Handler
+  const handleGoogleSignIn = async () => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`,
+      },
+    });
+
+    if (error) {
+      console.error("Google Sign-In Error:", error.message);
+      // It's a good idea to show a user-facing error here, e.g., using a toast notification.
+    }
+  };
+
+  // Renders the correct view on the right side: default, sign-in, or sign-up
   const renderAuthContent = () => {
     switch (authMode) {
       case 'signin':
-        return <SignInForm onSwitchToSignUp={() => setAuthMode('signup')} />;
-
+        return <SignInForm onSwitchToSignUp={() => setAuthMode('signup')} onGoBack={() => setAuthMode('default')} />;
       case 'signup':
-        return <SignUpForm onSwitchToSignIn={() => setAuthMode('signin')} />;
-
+        return <SignUpForm onSwitchToSignIn={() => setAuthMode('signin')} onGoBack={() => setAuthMode('default')} />;
       default:
         return (
-          <>
-            <img
-              src="https://assets.emergent.sh/assets/Landing-Auth-Star.gif"
-              className="h-12 w-auto cursor-pointer md:h-[64px] mb-4 z-10"
-              alt="Emergent Logo"
-            />
-
-            <div className="text-center font-sans font-medium">
-              <span
-                className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-white md:text-[36px]"
-                style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}
-              >
+          <div className="w-full max-w-[414px] flex flex-col items-center">
+            <img src="https://assets.emergent.sh/assets/Landing-Auth-Star.gif" className="h-12 w-auto cursor-pointer md:h-[64px] mb-4 z-10" alt="Emergent Logo" />
+            <div className="text-center font-sans font-medium mb-8">
+              <span className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-white md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}>
                 The fastest path from <br />
                 <span className="bg-gradient-to-r from-white to-[#81FF89] bg-clip-text text-transparent">idea to product</span>
               </span>
-
-              <div className="mt-4 flex items-center justify-center">
-                <p className="text-center text-[14px] font-medium leading-5 tracking-[-0.15px] text-white md:text-[16px]">
-                  Already have an account?
-                </p>
-                <button
-                  onClick={() => setAuthMode('signin')}
-                  className="cursor-pointer ml-2 text-center font-brockmann text-[14px] font-medium leading-5 tracking-[-0.15px] text-[#80FFF9] underline md:text-[16px]"
-                >
-                  Sign in
-                </button>
-              </div>
             </div>
 
-            {/* Optional signup button */}
-            {/* <button onClick={() => setAuthMode('signup')}>Create account</button> */}
-          </>
+            <button
+              onClick={handleGoogleSignIn}
+              className="flex items-center justify-center gap-3 w-full bg-white text-black font-semibold py-3 px-4 rounded-full border border-gray-300 hover:bg-gray-100 transition-colors"
+            >
+              <img src="https://www.google.com/favicon.ico" alt="Google logo" className="w-5 h-5" />
+              Continue with Google
+            </button>
+
+            <div className="relative flex items-center justify-center w-full my-4">
+              <div className="w-full border-t border-white/20"></div>
+              <span className="px-3 text-sm text-white/30 whitespace-nowrap">Or</span>
+              <div className="w-full border-t border-white/20"></div>
+            </div>
+
+            <button
+              onClick={() => setAuthMode('signup')}
+              className="w-full rounded-full bg-[#81ff89]/10 py-3 font-brockmann font-medium text-white transition-colors hover:bg-[#81ff89]/20"
+            >
+              Sign up with Email
+            </button>
+
+            <div className="mt-6 flex items-center justify-center">
+              <p className="text-center text-sm text-white">Already have an account?</p>
+              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#80FFF9] underline">
+                Sign in
+              </button>
+            </div>
+          </div>
         );
     }
   };
 
   return (
     <section className="authentication-section flex h-screen">
-      {/* LEFT SIDE CONTENT */}
-       <div
+      {/* LEFT SIDE CAROUSEL */}
+      <div
         className="relative hidden flex-1 items-center justify-center p-5 md:flex"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -100,10 +128,9 @@ const AuthSection = () => {
         <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover scale-[1.22]">
           <source src="https://assets.emergent.sh/assets/videos/clouds.mp4" type="video/mp4" />
         </video>
-
-        <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
           {showcaseImages.map((src, index) => (
-            <div key={index} className="absolute flex items-center justify-center" style={getStyle(index)}>
+            <div key={index} className="absolute flex items-center justify-center" style={getCarouselCardStyle(index)}>
               <div className="h-full w-full rounded-[20px] bg-gradient-to-b from-white/60 to-white/40 p-2 backdrop-blur-xl">
                 <img
                   src={src}
@@ -116,7 +143,7 @@ const AuthSection = () => {
         </div>
       </div>
 
-      {/* RIGHT SIDE CAROUSEL (unchanged) */}
+      {/* RIGHT SIDE CONTENT */}
       <div className="relative flex flex-1 flex-col items-center justify-center p-4">
         {renderAuthContent()}
       </div>
