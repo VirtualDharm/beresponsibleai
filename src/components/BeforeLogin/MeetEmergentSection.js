@@ -90,7 +90,6 @@ const MeetEmergentSection = () => {
               rows="4"
               className="placeholder:text-black/50 block min-h-[80px] w-full resize-none overflow-auto bg-transparent px-5 py-5 pb-0 text-[14px] leading-[150%] text-black placeholder:text-[14px] focus:outline-none"
               placeholder={placeholder ? `${placeholder}|` : 'What can I build for you today?'}
-              autoFocus
             />
             <div className="flex w-full items-center justify-between px-5 pb-3 pt-3">
               <div className="flex gap-2">
