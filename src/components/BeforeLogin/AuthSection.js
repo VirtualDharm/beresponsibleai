@@ -84,7 +84,7 @@ const AuthSection = () => {
           <div className="w-full max-w-[414px] flex flex-col items-center">
             <img src="https://assets.emergent.sh/assets/Landing-Auth-Star.gif" className="h-12 w-auto cursor-pointer md:h-[64px] mb-4 z-10" alt="Emergent Logo" />
             <div className="text-center font-sans font-medium mb-8">
-              <span className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-white md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}>
+              <span className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-black md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}>
                 The fastest path from <br />
                 <span className="bg-gradient-to-r from-[#FFFFFF] to-[#0DF9FF] bg-clip-text text-transparent">idea to product</span>
               </span>
@@ -100,19 +100,19 @@ const AuthSection = () => {
 
             <div className="relative flex items-center justify-center w-full my-4">
               <div className="w-full border-t border-white/20"></div>
-              <span className="px-3 text-sm text-white/30 whitespace-nowrap">Or</span>
+              <span className="px-3 text-sm text-black/30 whitespace-nowrap">Or</span>
               <div className="w-full border-t border-white/20"></div>
             </div>
 
             <button
               onClick={() => setAuthMode('signup')}
-              className="w-full rounded-full bg-[#0DF9FF]/10 py-3 font-brockmann font-medium text-white transition-colors hover:bg-[#0DF9FF]/20"
+              className="w-full rounded-full bg-[#0DF9FF]/10 py-3 font-brockmann font-medium text-black transition-colors hover:bg-[#0DF9FF]/20"
             >
               Sign up with Email
             </button>
 
             <div className="mt-6 flex items-center justify-center">
-              <p className="text-center text-sm text-white">Already have an account?</p>
+              <p className="text-center text-sm text-black">Already have an account?</p>
               <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#0DF9FF] underline">
                 Sign in
               </button>
