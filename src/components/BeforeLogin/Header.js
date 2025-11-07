@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 w-full z-[1002] transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-100'}`}>
-      <div className={`flex items-center justify-between md:py-4 md:px-6 max-md:py-2 max-md:px-4 ${scrolled ? 'backdrop-blur-sm' : ''}`}>
-        <img src="/logo.png" alt="Emergent Logo" className="h-5 md:h-6" />
+      <div className={`flex items-center justify-between md:py-6 md:px-8 max-md:py-8 max-md:px-3 ${scrolled ? 'backdrop-blur-sm' : ''}`}>
+        <img src="/logo.png" alt="Emergent Logo" className="h-14 md:h-20 w-auto ml-4" />
         <div className="absolute left-1/2 -translate-x-1/2">
           <div className="hidden md:flex items-center gap-1" style={{ mixBlendMode: 'difference' }}>
             <button className="px-3 py-2 text-[16px] font-medium text-white transition-colors hover:text-gray-300">Features</button>
