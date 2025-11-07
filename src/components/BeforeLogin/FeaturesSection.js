@@ -58,7 +58,7 @@ const FeaturesSection = () => {
           <a
             href="#"
             role="button"
-            className="inline-block bg-lime-300 text-black font-semibold py-3 px-8 rounded-full transition-transform hover:scale-105"
+            className="inline-block bg-[#047FB3] text-[#FFFFFF] font-semibold py-3 px-8 rounded-full transition-transform hover:scale-105"
           >
             Get Started
           </a>

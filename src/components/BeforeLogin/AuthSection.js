@@ -5,11 +5,16 @@ import SignUpForm from '../auth/SignUpForm';
 
 // Data for the carousel
 const showcaseImages = [
-  "https://assets.emergent.sh/assets/showcase/1.png",
-  "https://assets.emergent.sh/assets/showcase/2.png",
-  "https://assets.emergent.sh/assets/showcase/3.png",
-  "https://assets.emergent.sh/assets/showcase/4.png",
-  "https://assets.emergent.sh/assets/showcase/6.png",
+  "./image1.jpg",
+  "./image2.jpg",
+  "./image3.jpg",
+  "./image4.jpg",
+  "./image5.jpg",
+  // "https://assets.emergent.sh/assets/showcase/1.png",
+  // "https://assets.emergent.sh/assets/showcase/2.png",
+  // "https://assets.emergent.sh/assets/showcase/3.png",
+  // "https://assets.emergent.sh/assets/showcase/4.png",
+  // "https://assets.emergent.sh/assets/showcase/6.png",
 ];
 
 const AuthSection = () => {
@@ -81,7 +86,7 @@ const AuthSection = () => {
             <div className="text-center font-sans font-medium mb-8">
               <span className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-white md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}>
                 The fastest path from <br />
-                <span className="bg-gradient-to-r from-white to-[#81FF89] bg-clip-text text-transparent">idea to product</span>
+                <span className="bg-gradient-to-r from-[#FFFFFF] to-[#0DF9FF] bg-clip-text text-transparent">idea to product</span>
               </span>
             </div>
 
@@ -101,14 +106,14 @@ const AuthSection = () => {
 
             <button
               onClick={() => setAuthMode('signup')}
-              className="w-full rounded-full bg-[#81ff89]/10 py-3 font-brockmann font-medium text-white transition-colors hover:bg-[#81ff89]/20"
+              className="w-full rounded-full bg-[#0DF9FF]/10 py-3 font-brockmann font-medium text-white transition-colors hover:bg-[#0DF9FF]/20"
             >
               Sign up with Email
             </button>
 
             <div className="mt-6 flex items-center justify-center">
               <p className="text-center text-sm text-white">Already have an account?</p>
-              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#80FFF9] underline">
+              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#0DF9FF] underline">
                 Sign in
               </button>
             </div>

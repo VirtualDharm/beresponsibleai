@@ -11,7 +11,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="flex h-full w-64 flex-shrink-0 flex-col bg-[#1e293b] p-4">
+    <div className="flex h-full w-64 flex-shrink-0 flex-col bg-[#111111] p-4">
       {/* Header */}
       <div className="flex items-center gap-2 border-b border-slate-700 pb-4">
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-purple-600">
@@ -22,7 +22,7 @@ const Sidebar = () => {
       </div>
 
       {/* New Chat Button */}
-      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-indigo-600 py-2 text-sm font-semibold text-white transition-colors hover:bg-indigo-700">
+      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-[#047FB3] py-2 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
         <PlusIcon />
         New Chat
       </button>

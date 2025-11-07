@@ -64,8 +64,8 @@ const Footer = () => {
                          <a href="https://www.ai.work/request-access" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-between gap-4 rounded-xl bg-[#141414] p-4 text-white transition-transform hover:scale-[1.02]">
                             <div className="absolute left-4 top-1/2 -translate-y-1/2">
                                 <div className="relative h-5 w-5">
-                                    <div className="absolute h-full w-full rounded-full bg-green-500 blur-[1px]"></div>
-                                    <div className="absolute h-full w-full rounded-full bg-green-400"></div>
+                                    <div className="absolute h-full w-full rounded-full bg-cyan-500 blur-[1px]"></div>
+                                    <div className="absolute h-full w-full rounded-full bg-cyan-400"></div>
                                 </div>
                             </div>
                             <p className="mx-auto text-sm font-medium">Request Access</p>

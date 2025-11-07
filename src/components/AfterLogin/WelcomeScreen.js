@@ -20,7 +20,7 @@ const WelcomeScreen = () => {
     <div className="flex h-full flex-col items-center justify-center text-center">
       <h1 className="text-4xl font-bold">
         {/* Use the dynamic displayName */}
-        <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-[#0DF9FF] to-[#E3E8E6] bg-clip-text text-transparent">
           Welcome, {displayName}
         </span>
       </h1>

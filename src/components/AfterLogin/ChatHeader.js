@@ -17,7 +17,7 @@ const ChatHeader = () => {
   };
 
   return (
-    <header className="flex h-16 flex-shrink-0 items-center justify-between border-b border-slate-700 bg-[#1e293b] px-6">
+    <header className="flex h-16 flex-shrink-0 items-center justify-between border-b border-slate-700 bg-[#111111] px-6">
       {/* GPT Model Selector (from original design) */}
       <div className="flex items-center gap-2">
         <span className="text-sm font-semibold text-white">GPT 4</span>
@@ -38,7 +38,7 @@ const ChatHeader = () => {
         <button className="text-gray-400 hover:text-white"><AppIcon /></button>
         <button className="text-gray-400 hover:text-white"><BellIcon /></button>
 
-        <button className="rounded-lg bg-emerald-500 px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-600">
+        <button className="rounded-lg bg-[#047FB3] px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
           Try AI Pro
         </button>
 
@@ -47,7 +47,7 @@ const ChatHeader = () => {
           <span className="hidden text-sm text-gray-400 sm:block">{user?.email}</span>
           <button
             onClick={handleLogout}
-            className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-red-700"
+            className="rounded-md bg-[#047FB3] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]"
           >
             Sign Out
           </button>

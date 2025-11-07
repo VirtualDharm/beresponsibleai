@@ -72,7 +72,7 @@ const MeetEmergentSection = () => {
               <div className="relative ml-1 h-[28px] w-[150px] text-left">
                 {animatedWords.map((word, index) => (
                   <span key={word} className={`absolute inset-0 transition-transform duration-500 ease-in-out ${index === currentWordIndex ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'}`}>
-                    <p className="text-[20px] font-medium leading-[140%] text-white underline underline-offset-2 max-sm:text-[18px]">
+                      <p className="text-[20px] font-medium leading-[140%] text-[#0DF9FF] underline underline-offset-2 max-sm:text-[18px]">
                       {word}
                     </p>
                   </span>

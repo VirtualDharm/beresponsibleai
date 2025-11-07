@@ -75,9 +75,9 @@ const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-black text-white py-20 px-5 sm:px-10">
+    <section className="bg-[#035F85] text-white py-20 px-5 sm:px-10">
       <div className="flex flex-col items-center justify-center text-center">
-        <div className="text-base font-semibold text-[#FF7F41] sm:text-lg">FAQ</div>
+  <div className="text-base font-semibold text-[#0DF9FF] sm:text-lg">FAQ</div>
         <div className="relative pt-2 sm:pt-4 max-w-[658px] text-2xl sm:text-4xl md:text-5xl font-semibold leading-tight">
           Got questions? <br />Join the community.
         </div>

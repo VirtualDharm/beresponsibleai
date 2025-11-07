@@ -38,12 +38,12 @@ const Testimonial = {
   author: "Eswar Narayanan",
   title: "Director, Corteva Catalyst",
   authorImage: "https://framerusercontent.com/images/xoFIG6wSMMQfs7gvcNlR9GVaLck.jpg",
-  companyLogo: "https://framerusercontent.com/images/15Ld3p6d773yFp3y2w3cMb0.svg"
+  companyLogo: "./writer_image.png"
 };
 
 const FillerSection = () => {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8" >
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-12 text-center lg:text-left">

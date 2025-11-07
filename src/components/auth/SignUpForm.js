@@ -82,7 +82,7 @@ const SignUpForm = ({ onSwitchToSignIn, onGoBack }) => {
         <button
           type="submit"
           disabled={loadingSubmit}
-          className="mt-2 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-medium transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+          className="mt-2 bg-cyan-600 hover:bg-cyan-700 text-white py-3 rounded-xl font-medium transition-all disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {loadingSubmit ? 'Creating account...' : 'Create Account'}
         </button>
