@@ -2,39 +2,34 @@ import React, { useState, useRef, useEffect } from 'react';
 
 const faqData = [
   {
-    question: "How do I activate Dora AI?",
+    question: "What is BeResponsibleAI?",
     answer: (
       <p>
-        Dora AI is available to all users. Just click the
-        <img src="https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/ai_mini_logo.webp" alt="Dora AI logo" className="inline-block mx-2 h-7 w-7 align-middle" />
-        button on the top toolbar to start prompting!
+        BeResponsibleAI is both a platform and a movement. It’s the world’s first Responsible AI Suite with an integrated AI chat that helps you evaluate your ideas against five essential pillars: Responsibility, Explainability, Ethics, Resilience, and Compliance. Our mission is to help you build trust before you build AI.
       </p>
     )
   },
   {
-    question: "How is Dora AI different from other AI tools?",
+    question: "What is the RATS (Resilient AI Trust Score)?",
     answer: (
       <>
-        <p>Existing AI website tools rely on predefined templates to swap generated copy and images, without real knowledge of design principles.</p>
-        <br />
-        <p>By contrast, each Dora AI site is realized from beginning to end with AI... No templates, no pre-defined layouts.</p>
+        <p>The RATS is your AI’s maturity index for trust. Instead of a simple pass/fail, it evaluates your project across our five core pillars to provide a score from Foundational to Advanced, giving you a clear roadmap for improvement and responsible development.</p>
       </>
     )
   },
   {
-    question: "How much usage is included with my Dora AI plan?",
+    question: "Is my code and project information safe?",
     answer: (
-        <p>Every Dora account has a base credit balance of 120 credits. You can also purchase a Dora plan to obtain more credits.
-            <a href="https://www.dora.run/pricing" target="_blank" rel="noopener noreferrer" className="underline ml-1">See Pricing</a>
+        <p>Yes. This is a beta version and to protect your privacy and intellectual property, the application does not save or store any of your chat conversations, submitted code, or project assessment answers. All data is processed in-session only.
         </p>
     )
   },
   {
-    question: "Can Dora AI generate 3D assets or site animations?",
+    question: "How can I join the BeResponsibleAI movement?",
     answer: (
       <p>
-        AI-generated 3D and animations are central to Dora AI and are currently under development for
-        <a href="https://s.dora.run/ai-roadmap" target="_blank" rel="noopener noreferrer" className="underline ml-1">future versions.</a>
+        The best way to get involved is to connect with our founder and the community on LinkedIn. Follow our journey, share your feedback, and help shape the future of responsible AI development.
+        <a href="https://www.linkedin.com/in/sharad-maheshwari-abdominal-imager/" target="_blank" rel="noopener noreferrer" className="underline ml-1">Join the conversation!</a>
       </p>
     )
   },
@@ -77,21 +72,21 @@ const FAQSection = () => {
   return (
     <section className="bg-[#035F85] text-white py-20 px-5 sm:px-10">
       <div className="flex flex-col items-center justify-center text-center">
-  <div className="text-base font-semibold text-[#0DF9FF] sm:text-lg">FAQ</div>
+  <div className="text-base font-semibold text-[#0DF9FF] sm:text-lg">FREQUENTLY ASKED QUESTIONS</div>
         <div className="relative pt-2 sm:pt-4 max-w-[658px] text-2xl sm:text-4xl md:text-5xl font-semibold leading-tight">
-          Got questions? <br />Join the community.
+          Have Questions? <br /> We Have Answers.
         </div>
         <div className="mt-2 text-center text-xs text-white/50 sm:mt-4 sm:text-base max-w-[625px]">
-          Our Discord community and staff are here to help!<br />Your feedback will help Dora AI improve in future versions.
+          Our mission is to make responsible AI accessible to everyone. <br />Join the conversation and help us build a trustworthy AI future.
         </div>
         <a
           target="_blank"
           rel="noopener noreferrer"
           className="group relative mt-6 flex h-[41px] w-[156px] items-center justify-center gap-2 overflow-hidden rounded-full border border-white/20 text-base font-medium shadow-[0_0px_2px_0px_#FFFFFF_inset] transition-all duration-800 hover:shadow-[0_0px_20px_0px_#FFFFFF_inset] sm:mt-10"
-          href="https://s.dora.run/dora-discord"
+          href="https://www.linkedin.com/in/sharad-maheshwari-abdominal-imager/"
         >
           <div className="flex h-full w-full items-center justify-center gap-2 bg-white/10">
-            <span>Join Discord</span>
+            <span>Connect</span>
             <img
               src="https://cdn-www.dora.run/__dora__/morpheus/static/images/ai/arrow-right.png"
               alt="arrow"
