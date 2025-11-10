@@ -86,7 +86,9 @@ const AuthSection = () => {
             <div className="text-center font-sans font-medium mb-8">
               <span className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-black md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}>
                 The fastest path from <br />
-                <span className="bg-gradient-to-r from-[#FFFFFF] to-[#0DF9FF] bg-clip-text text-transparent">idea to product</span>
+                <span className="bg-[linear-gradient(to_right,#047FB3_0%,#047FB3_70%,#0DF9FF_85%)] bg-clip-text text-transparent">
+                  idea to product
+                </span>
               </span>
             </div>
 
@@ -106,14 +108,14 @@ const AuthSection = () => {
 
             <button
               onClick={() => setAuthMode('signup')}
-              className="w-full rounded-full bg-[#0DF9FF]/10 py-3 font-brockmann font-medium text-black transition-colors hover:bg-[#0DF9FF]/20"
+              className="w-full rounded-full bg-[#E3E8E6] py-3 font-brockmann font-medium text-black transition-colors hover:bg-[#0DF9FF]"
             >
               Sign up with Email
             </button>
 
             <div className="mt-6 flex items-center justify-center">
               <p className="text-center text-sm text-black">Already have an account?</p>
-              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#0DF9FF] underline">
+              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#047FB3] underline font-medium">
                 Sign in
               </button>
             </div>
@@ -123,36 +125,58 @@ const AuthSection = () => {
   };
 
   return (
-    <section className="authentication-section flex h-screen">
-      {/* LEFT SIDE CAROUSEL */}
-      <div
-        className="relative hidden flex-1 items-center justify-center p-5 md:flex"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+   <section className="authentication-section flex h-screen">
+    {/* LEFT SIDE CAROUSEL */}
+    <div
+      className="relative hidden md:flex flex-[0.6] items-center justify-center p-5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover scale-[1.22]"
       >
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover scale-[1.22]">
-          <source src="https://assets.emergent.sh/assets/videos/clouds.mp4" type="video/mp4" />
-        </video>
-        <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
-          {showcaseImages.map((src, index) => (
-            <div key={index} className="absolute flex items-center justify-center" style={getCarouselCardStyle(index)}>
-              <div className="h-full w-full rounded-[20px] bg-gradient-to-b from-white/60 to-white/40 p-2 backdrop-blur-xl">
-                <img
-                  src={src}
-                  alt={`Showcase ${index + 1}`}
-                  className="h-full w-full rounded-[16px] object-cover"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+        <source
+          src="https://assets.emergent.sh/assets/videos/clouds.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-      {/* RIGHT SIDE CONTENT */}
-      <div className="relative flex flex-1 flex-col items-center justify-center p-4">
-        {renderAuthContent()}
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
+        {showcaseImages.map((src, index) => (
+          <div
+            key={index}
+            className="absolute flex items-center justify-center"
+            style={getCarouselCardStyle(index)}
+          >
+            <div className="h-full w-full rounded-[20px] bg-gradient-to-b from-white/60 to-white/40 p-2 backdrop-blur-xl">
+              <img
+                src={src}
+                alt={`Showcase ${index + 1}`}
+                className="h-full w-full rounded-[16px] object-cover"
+              />
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
+
+    {/* RIGHT SIDE CONTENT */}
+    <div
+      className="relative flex flex-[0.4] flex-col items-center justify-center p-8"
+      style={{
+        backgroundImage: "url('/bgimage.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {renderAuthContent()}
+    </div>
+  </section>
   );
 };
 
