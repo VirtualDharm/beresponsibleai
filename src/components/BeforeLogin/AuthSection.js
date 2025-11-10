@@ -170,8 +170,6 @@ const AuthSection = () => {
       style={{
         backgroundImage: "url('/bgimage.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
       }}
     >
       {renderAuthContent()}
