@@ -20,7 +20,7 @@ const LandingPage = () => {
         <MeetEmergentSection />
         <FeaturesSection />
         <PricingSection />
-        <ProductVideoSection />
+        {/* <ProductVideoSection /> */}
         <FAQSection />
         <FillerSection />
         <Footer />
