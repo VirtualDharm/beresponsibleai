@@ -5,26 +5,26 @@ const featureCards = [
   {
     imageSrc:
       "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c1671c649958c67969d2_e2e.webp",
-    altText: "Screenshot of scheduling agent dashboard",
-    title: "Scheduler Saves You From Manual Outreach",
+    altText: "AI Chat Interface",
+    title: "AI-Powered Responsible AI Coach",
     description:
-      "Schedulers are drowning in post-it reminders, texts, and software solutions. Alden's end-to-end scheduling agent automates shift coverage around the clock, learning your team’s preferences, filling schedule gaps, and handling callouts. It customizes outreach via text, voice, and email, while keeping your EHR updated in real time.",
+      "Engage in a guided conversation with an AI advisor that helps you refine ideas, review prompts, and test for ethical blind spots. It's the world’s first chat that doubles as a coach and debugger for AI creators, ensuring you consider key ethical dimensions from the start.",
   },
   {
     imageSrc:
       "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c20e69d0d522d9ee43a0_ai-call.webp",
-    altText: "A view of message center",
-    title: "Call Center Agent Takes Action 24/7",
+    altText: "Risk Assessment Dashboard",
+    title: "Get Your RATS Score",
     description:
-      "Caregivers and client calls sit getting redirected and waiting for answers. Handle caregiver and clients calls at scale with 24/7 voice AI built for home care. Instantly triage callouts, reschedule visits, confirm caregiver availability, and keep patients informed — in any language. Alden's agent can escalate urgent care issues or fill open shifts automatically, so your coordinators only step in when it truly needs a human touch.",
+      "Use the Risk Assessor to evaluate your AI idea against the five pillars of the RATS (Resilient AI Trust Score) framework. Understand your project's maturity index for trust and get a clear blueprint before you ever write a line of code.",
   },
   {
     imageSrc:
       "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c265c3c1b8befeddd801_e2d2485679e9f3aebb46151c4d5d69f2_caregiver-exp-manager.webp",
-    altText: "Caregiver Experience Manager",
-    title: "Caregiver Manager Onboards Seamlessly",
+    altText: "Code Analysis View",
+    title: "Context-Aware Code Audits",
     description:
-      "Unclear schedules, delayed responses, and inconsistent communications can burn your caregiver team out. Don’t lose great hires to silence. Alden's platform keeps caregivers engaged from day one — checking in, collecting skills, confirming availability, and keeping them compliant so they’re always ready for their next shift.",
+      "Analyze your existing code with our audit tool. By providing context about your project's function and data sensitivity, you receive a detailed RATS audit that identifies risks and provides actionable recommendations for improvement across all five pillars of trust.",
   },
 ];
 
@@ -45,15 +45,11 @@ const FeaturesSection = () => {
           </div>
           <div className="mb-4">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-gray-900">
-              Work Smarter with Your 24/7 AI Coordinator
+              Optimize Coding with Your 24/7 AI Assistant
             </h2>
           </div>
           <p className="text-base text-gray-600 mb-8">
-            Your AI coordination agent is built for the way you run your agency.
-            Mix and match modules for scheduling, communication, onboarding, and
-            client engagement — each tailored to your processes for maximum
-            impact. We can start with one custom use case, and expand to more as
-            you see ROI.
+            The BeResponsibleAI suite provides a comprehensive platform to guide you from idea to implementation. Evaluate concepts with our Risk Assessor, refine your approach with an AI coach, and audit your existing code to ensure it meets the highest standards of trust and responsibility.
           </p>
           <a
             href="#"

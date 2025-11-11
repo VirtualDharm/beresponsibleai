@@ -82,7 +82,7 @@ const AuthSection = () => {
       default:
         return (
           <div className="w-full max-w-[414px] flex flex-col items-center">
-            <img src="https://assets.emergent.sh/assets/Landing-Auth-Star.gif" className="h-12 w-auto cursor-pointer md:h-[64px] mb-4 z-10" alt="Emergent Logo" />
+            <img src="https://assets.emergent.sh/assets/Landing-Auth-Star.gif" className="h-12 w-auto cursor-pointer md:h-[64px] mb-4 z-10" alt="BeResponsibleAI gif" />
             <div className="text-center font-sans font-medium mb-8">
               <span className="text-center font-brockmann text-[32px] font-medium leading-9 tracking-[-0.72px] text-black md:text-[36px]" style={{ textShadow: '0 0 40px rgba(232, 232, 230, 0.20)' }}>
                 The fastest path from <br />
@@ -125,7 +125,7 @@ const AuthSection = () => {
   };
 
   return (
-   <section className="authentication-section flex h-screen">
+   <section className="authentication-section flex h-screen" id="auth">
     {/* LEFT SIDE CAROUSEL */}
     <div
       className="relative hidden md:flex flex-[0.6] items-center justify-center p-5"

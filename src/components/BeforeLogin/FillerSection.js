@@ -2,41 +2,41 @@ import React from 'react';
 
 const logos = [
   {
-    name: 'Novo Nordisk',
+    name: 'NIST Framework',
     src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
-    alt: 'Novo Nordisk Logo'
+    alt: 'NIST AI RMF'
   },
   {
-    name: 'Johnson & Johnson',
+    name: 'OECD AI Principles',
     src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
-    alt: 'Johnson & Johnson Logo'
+    alt: 'OECD AI Principles'
   },
   {
-    name: 'Corteva Catalyst',
+    name: 'EU AI Act',
     src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
-    alt: 'Corteva Catalyst Logo'
+    alt: 'EU AI Act'
   },
   {
-    name: 'IFF',
+    name: 'Model Cards',
     src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
-    alt: 'IFF Logo'
+    alt: 'Model Cards'
   },
   {
-    name: 'Novonesis',
+    name: 'Datasheets for Datasets',
     src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
-    alt: 'Novonesis Logo'
+    alt: 'Datasheets for Datasets'
   },
   {
-    name: 'Argenx',
+    name: 'Community-Driven',
     src: 'https://framerusercontent.com/images/tN0DE98R6QTSXvDWCOncdYpR5M.png',
-    alt: 'Argenx Logo'
+    alt: 'Community-Driven'
   },
 ];
 
 const Testimonial = {
-  quote: "Cradle’s AI-based protein design platform provides easy access and acceleration to protein optimization for the discovery pipeline.",
-  author: "Eswar Narayanan",
-  title: "Director, Corteva Catalyst",
+  quote: "Responsible AI should be a right, not a privilege. Our mission is to put Responsible AI tools into the hands of thinkers and coders — before they write a single line of code.",
+  author: "Dr. Sharad Maheshwari",
+  title: "Founder, BeResponsibleAI & Radiologist",
   authorImage: "https://framerusercontent.com/images/xoFIG6wSMMQfs7gvcNlR9GVaLck.jpg",
   companyLogo: "./writer_image.png"
 };
@@ -50,11 +50,11 @@ const FillerSection = () => {
           <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
             <div className="h-2 w-2 bg-blue-600 rounded-sm"></div>
             <p className="text-sm font-semibold uppercase tracking-widest text-gray-500">
-              Trusted by the best
+              A FOUNDER'S NOTE
             </p>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 max-w-4xl mx-auto lg:mx-0">
-            Scientific teams at Novo Nordisk, Johnson & Johnson, and IFF all use Cradle to engineer proteins faster.
+            Inspired by Global Standards, Built for the Modern Developer.
           </h2>
         </div>
 
@@ -64,11 +64,7 @@ const FillerSection = () => {
           <div className="grid grid-cols-2 gap-4">
             {logos.map((logo, index) => (
               <div key={index} className="flex h-32 items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6">
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="max-h-12 w-auto object-contain"
-                />
+                <span className="text-center font-semibold text-gray-700">{logo.name}</span>
               </div>
             ))}
           </div>
@@ -81,7 +77,7 @@ const FillerSection = () => {
             <div className="flex items-center gap-4">
               <img
                 src={Testimonial.companyLogo}
-                alt="Corteva Logo"
+                alt="Founder of BeResponsibleAI"
                 className="h-10 w-10"
               />
               <div>

@@ -3,12 +3,12 @@ import { CheckIcon } from "@heroicons/react/20/solid";
 
 const tiers = [
   {
-    name: "Starter",
-    id: "tier-starter",
+    name: "Developer",
+    id: "tier-developer",
     href: "#",
-    description: "Everything you need to get started.",
+    description: "For individuals and teams starting their responsible AI journey.",
     price: { monthly: "$19", annually: "$199" },
-    features: ["Custom domains", "Edge content delivery", "Advanced analytics"],
+    features: ["Access to all Suite Tools", "Generate RATS Score", "AI-Powered Chat Coach", "Community Access"],
     featured: false,
   },
   {
@@ -18,26 +18,24 @@ const tiers = [
     description: "Added flexibility at scale.",
     price: { monthly: "$99", annually: "$999" },
     features: [
-      "Custom domains",
-      "Edge content delivery",
-      "Advanced analytics",
-      "Quarterly workshops",
-      "Single sign-on (SSO)",
-      "Priority phone support",
+      "Everything in Developer",
+      "Submit feedback for new features",
+      "Invitation to community calls",
+      "Early access to new tools",
     ],
     featured: true,
   },
   {
-    name: "Growth",
-    id: "tier-growth",
+    name: "Partner",
+    id: "tier-partner",
     href: "#",
-    description: "All the extras for your growing team.",
+    description: "For organizations integrating RATS into their workflow.",
     price: { monthly: "$49", annually: "$499" },
     features: [
-      "Custom domains",
-      "Edge content delivery",
-      "Advanced analytics",
-      "Quarterly workshops",
+      "Everything in Contributor",
+      "Collaborate on feature development",
+      "Priority support for integration",
+      "API access for RATS framework",
     ],
     featured: false,
   },
@@ -51,7 +49,7 @@ export default function PricingSection() {
   const [billing, setBilling] = useState("monthly");
 
   return (
-    <section className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8" id="about">
       {/* Gradient Background */}
       <div
         aria-hidden="true"
@@ -72,8 +70,7 @@ export default function PricingSection() {
           Pricing that grows with you
         </h2>
         <p className="mt-6 text-lg font-medium text-gray-400 sm:text-xl/8">
-          Choose an affordable plan that’s packed with the best features for
-          engaging your audience, creating customer loyalty, and driving sales.
+          Responsible AI should be a right, not a privilege. Our tools are free to empower every developer to code responsibly. This is a community effort, and we invite you to join us at any level.
         </p>
 
         {/* Toggle */}
@@ -178,7 +175,7 @@ export default function PricingSection() {
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10"
               )}
             >
-              Buy this plan
+              Get Started
             </a>
           </div>
         ))}

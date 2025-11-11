@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
 
-const animatedWords = ["internal tool.", "web app.", "mobile app.", "chrome extension."];
+const animatedWords = ["Responsibly.", "Ethically.", "Resiliently.", "Compliantly."];
 const placeholderTexts = [
-  "A dashboard for my business that shows key metrics...",
-  "An app for tracking my daily habits and progress...",
-  "A game where players can build and trade virtual items...",
-  "A portfolio website to showcase my design work...",
+  "An idea for a clinical decision support tool...",
+  "A generative model for marketing content...",
+  "A system for automated hiring and resume screening...",
+  "An app that provides personalized financial advice...",
 ];
 
 const MeetEmergentSection = () => {
@@ -51,23 +51,23 @@ const MeetEmergentSection = () => {
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-20 md:py-0 backdrop-blur-sm bg-white/5">
-      <div className="my-auto flex flex-col gap-[40px] container items-center">
+      <div className="my-auto flex flex-col pt-[150px] gap-[40px] container items-center">
         {/* Top Banner Link */}
-        <a target="_blank" rel="noopener noreferrer" className="mx-auto flex w-max items-center gap-2 rounded-lg bg-[#E3E8E6] px-5 py-2 text-black transition-transform hover:scale-105" href="https://vsc.is/seed-funding-yc-dalton-caldwell-and-soma-capital-led-by-gokul-rajaram">
+        <a target="_blank" rel="noopener noreferrer" className="mx-auto flex w-max items-center gap-2 rounded-lg bg-[#E3E8E6] px-5 py-2 text-black transition-transform hover:scale-105" href="https://www.linkedin.com/posts/sharad-maheshwari-abdominal-imager_a-new-movement-called-beresonsibleai-activity-7380531219584782336-h2qD/">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" className="text-black"><path d="M152,224a8,8,0,0,1-8,8H112a8,8,0,0,1,0-16h32A8,8,0,0,1,152,224ZM128,112a12,12,0,1,0-12-12A12,12,0,0,0,128,112Zm95.62,43.83-12.36,55.63a16,16,0,0,1-25.51,9.11L158.51,200h-61L70.25,220.57a16,16,0,0,1-25.51-9.11L32.38,155.83a16.09,16.09,0,0,1,3.32-13.71l28.56-34.26a123.07,123.07,0,0,1,8.57-36.67c12.9-32.34,36-52.63,45.37-59.85a16,16,0,0,1,19.6,0c9.34,7.22,32.47,27.51,45.37,59.85a123.07,123.07,0,0,1,8.57,36.67l28.56,34.26A16.09,16.09,0,0,1,223.62,155.83ZM99.43,184h57.14c21.12-37.54,25.07-73.48,11.74-106.88C156.55,47.64,134.49,29,128,24c-6.51,5-28.57,23.64-40.33,53.12C74.36,110.52,78.31,146.46,99.43,184Zm-15,5.85Q68.28,160.5,64.83,132.16L48,152.36,60.36,208l.18-.13ZM208,152.36l-16.83-20.2q-3.42,28.28-19.56,57.69l23.85,18,.18.13Z"></path></svg>
-          <p className="text-[12px] font-medium uppercase leading-[150%] text-black">ROCKET RAISES $15M SEED FUNDING</p>
+          <p className="text-[12px] font-medium uppercase leading-[150%] text-black">A NEW MOVEMENT: BERESPONSIBLEAI</p>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 256 256" className="text-black"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
         </a>
 
         {/* Headlines */}
         <div className="flex w-full flex-col gap-2 overflow-hidden text-center">
           <p className="mx-auto w-7/12 text-[48px] font-semibold leading-[120%] text-white max-sm:w-full max-sm:text-[32px]">
-            Think It. Type It. Launch It.
+            Don't Just Code. Code Responsibly.
           </p>
           <div className="mx-auto flex w-[620px] flex-col items-center justify-center gap-1 overflow-hidden max-sm:w-full">
             <div className="flex flex-wrap justify-center">
               <p className="text-[20px] leading-[140%] text-white max-sm:text-[18px]">
-                Build production-ready
+                Build AI that is
               </p>
               <div className="relative ml-1 h-[28px] w-[150px] text-left">
                 {animatedWords.map((word, index) => (
@@ -89,7 +89,7 @@ const MeetEmergentSection = () => {
               name="prompt"
               rows="4"
               className="placeholder:text-black/50 block min-h-[80px] w-full resize-none overflow-auto bg-transparent px-5 py-5 pb-0 text-[14px] leading-[150%] text-black placeholder:text-[14px] focus:outline-none"
-              placeholder={placeholder ? `${placeholder}|` : 'What can I build for you today?'}
+              placeholder={placeholder ? `${placeholder}|` : 'What idea will you evaluate today?'}
             />
             <div className="flex w-full items-center justify-between px-5 pb-3 pt-3">
               <div className="flex gap-2">
