@@ -82,7 +82,7 @@ export default function PricingSection() {
               className={classNames(
                 "px-4 py-1.5 rounded-md transition",
                 billing === "monthly"
-                  ? "bg-indigo-600"
+                  ? "bg-[#0ED8E3]"
                   : "hover:bg-white/20 text-gray-300"
               )}
             >
@@ -94,7 +94,7 @@ export default function PricingSection() {
               className={classNames(
                 "px-4 py-1.5 rounded-md transition",
                 billing === "annually"
-                  ? "bg-indigo-600"
+                  ? "bg-[#0ED8E3]"
                   : "hover:bg-white/20 text-gray-300"
               )}
             >
@@ -119,7 +119,7 @@ export default function PricingSection() {
             <h3
               id={tier.id}
               className={classNames(
-                tier.featured ? "text-indigo-600" : "text-indigo-400",
+                tier.featured ? "text-[#0ED8E3]" : "text-[#0ED8E3]",
                 "text-sm font-semibold"
               )}
             >
@@ -157,7 +157,7 @@ export default function PricingSection() {
                 <li key={feature} className="flex gap-x-3">
                   <CheckIcon
                     className={classNames(
-                      tier.featured ? "text-indigo-600" : "text-indigo-400",
+                      tier.featured ? "text-[#0ED8E3]" : "text-[#0ED8E3]",
                       "h-6 w-5 flex-none"
                     )}
                   />
@@ -170,8 +170,8 @@ export default function PricingSection() {
               href={tier.href}
               className={classNames(
                 tier.featured
-                  ? "bg-indigo-600 text-white hover:bg-indigo-500"
-                  : "text-indigo-400 inset-ring inset-ring-indigo-200 hover:bg-white/10",
+                  ? "bg-[#0ED8E3] text-white hover:bg-[#0DC7D1]"
+                  : "text-[#0ED8E3] inset-ring inset-ring-indigo-200 hover:bg-white/10",
                 "mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10"
               )}
             >

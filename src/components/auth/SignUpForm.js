@@ -36,7 +36,7 @@ const SignUpForm = ({ onSwitchToSignIn, onGoBack }) => {
   };
 
   return (
-    <div className="w-full max-w-md bg-[#1e293b]/80 rounded-2xl shadow-2xl p-8 border border-slate-700 backdrop-blur-sm">
+    <div className="w-full max-w-md bg-[#1e293b]/70 rounded-2xl shadow-2xl p-8 border border-slate-700 backdrop-blur-sm">
       <h2 className="text-3xl font-semibold text-center text-white mb-6 font-brockmann">
         Create Your Account ✨
       </h2>

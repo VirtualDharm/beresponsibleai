@@ -40,7 +40,7 @@ const SignInForm = ({ onSwitchToSignUp, onGoBack }) => {
   };
 
   return (
-    <div className="w-full max-w-md bg-[#1e293b]/80 rounded-2xl shadow-2xl p-8 border border-slate-700 backdrop-blur-sm">
+    <div className="w-full max-w-md bg-[#1e293b]/70 rounded-2xl shadow-2xl p-8 border border-slate-700 backdrop-blur-sm">
       <h2 className="text-3xl font-semibold text-center text-white mb-6 font-brockmann">
         Welcome Back 👋
       </h2>
@@ -86,7 +86,7 @@ const SignInForm = ({ onSwitchToSignUp, onGoBack }) => {
         <button
           type="submit"
           disabled={loadingSubmit}
-          className="mt-2 bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-medium transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+          className="mt-2 bg-[#0ED8E3] hover:bg-[#0DC7D1] text-white py-3 rounded-xl font-medium transition-all disabled:opacity-70 disabled:cursor-not-allowed"
         >
           {loadingSubmit ? 'Signing in...' : 'Sign In'}
         </button>
@@ -94,7 +94,7 @@ const SignInForm = ({ onSwitchToSignUp, onGoBack }) => {
       {message && <p className="mt-4 text-center text-sm text-red-400">{message}</p>}
       <p className="mt-6 text-center text-sm text-slate-400">
         Don’t have an account?{' '}
-        <button onClick={onSwitchToSignUp} className="font-medium text-indigo-400 hover:underline focus:outline-none">
+        <button onClick={onSwitchToSignUp} className="font-medium text-[#0ED8E3] hover:underline focus:outline-none">
           Sign Up
         </button>
       </p>
