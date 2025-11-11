@@ -14,15 +14,15 @@ const Sidebar = () => {
     <div className="flex h-full w-64 flex-shrink-0 flex-col bg-[#111111] p-4">
       {/* Header */}
       <div className="flex items-center gap-2 border-b border-slate-700 pb-4">
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-purple-600">
+        <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-indigo-500 to-purple-600">
           {/* A simplified logo */}
-          <div className="h-4 w-4 rounded-full bg-white/80"></div>
+          <div className="h-4 w-4 rounded-md bg-white/80"></div>
         </div>
         <h1 className="text-lg font-semibold text-white">AI Chat</h1>
       </div>
 
       {/* New Chat Button */}
-      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-[#047FB3] py-2 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
+      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-[#0ED8E3] py-2 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
         <PlusIcon />
         New Chat
       </button>
@@ -61,7 +61,7 @@ const Sidebar = () => {
       {/* User Profile */}
       <div className="mt-auto border-t border-slate-700 pt-4">
         <a href="#" className="flex items-center gap-2 rounded-md p-2 hover:bg-slate-700">
-          <img src="https://i.pravatar.cc/32" alt="User Avatar" className="h-8 w-8 rounded-full" />
+          <img src="https://i.pravatar.cc/32" alt="User Avatar" className="h-8 w-8 rounded-md" />
           <span className="text-sm font-medium text-white">John Doe</span>
         </a>
       </div>

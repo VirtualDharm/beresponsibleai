@@ -38,7 +38,7 @@ const ChatHeader = () => {
         <button className="text-gray-400 hover:text-white"><AppIcon /></button>
         <button className="text-gray-400 hover:text-white"><BellIcon /></button>
 
-        <button className="rounded-lg bg-[#047FB3] px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
+        <button className="rounded-lg bg-[#0ED8E3] px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
           Try AI Pro
         </button>
 

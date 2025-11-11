@@ -30,7 +30,7 @@ const WelcomeScreen = () => {
         {suggestions.map((text, index) => (
           <div key={index} className="group relative cursor-pointer rounded-lg bg-slate-800 p-4 transition-colors hover:bg-slate-700">
             <p className="text-sm text-gray-300">{text}</p>
-            <div className="absolute bottom-2 right-2 rounded-full bg-slate-600 p-1 opacity-0 transition-opacity group-hover:opacity-100">
+            <div className="absolute bottom-2 right-2 rounded-md bg-slate-600 p-1 opacity-0 transition-opacity group-hover:opacity-100">
               <ArrowIcon className="h-4 w-4 -rotate-45" />
             </div>
           </div>

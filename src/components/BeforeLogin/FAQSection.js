@@ -82,7 +82,7 @@ const FAQSection = () => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative mt-6 flex h-[41px] w-[156px] items-center justify-center gap-2 overflow-hidden rounded-full border border-white/20 text-base font-medium shadow-[0_0px_2px_0px_#FFFFFF_inset] transition-all duration-800 hover:shadow-[0_0px_20px_0px_#FFFFFF_inset] sm:mt-10"
+          className="group relative mt-6 flex h-[41px] w-[156px] items-center justify-center gap-2 overflow-hidden rounded-md border border-white/20 text-base font-medium shadow-[0_0px_2px_0px_#FFFFFF_inset] transition-all duration-800 hover:shadow-[0_0px_20px_0px_#FFFFFF_inset] sm:mt-10"
           href="https://www.linkedin.com/in/sharad-maheshwari-abdominal-imager/"
         >
           <div className="flex h-full w-full items-center justify-center gap-2 bg-white/10">

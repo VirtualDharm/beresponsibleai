@@ -121,7 +121,7 @@ const AuthSection = () => {
 
             <div className="mt-6 flex items-center justify-center">
               <p className="text-center text-sm text-black">Already have an account?</p>
-              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#047FB3] underline font-medium">
+              <button onClick={() => setAuthMode('signin')} className="cursor-pointer ml-2 text-center text-sm text-[#0ED8E3] underline font-medium">
                 Sign in
               </button>
             </div>

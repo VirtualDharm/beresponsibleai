@@ -4,7 +4,7 @@ import React from "react";
 const featureCards = [
   {
     imageSrc:
-      "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c1671c649958c67969d2_e2e.webp",
+      "./bgimage3.jpg",
     altText: "AI Chat Interface",
     title: "AI-Powered Responsible AI Coach",
     description:
@@ -12,7 +12,7 @@ const featureCards = [
   },
   {
     imageSrc:
-      "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c20e69d0d522d9ee43a0_ai-call.webp",
+      "./bgimage2.jpg",
     altText: "Risk Assessment Dashboard",
     title: "Get Your RATS Score",
     description:
@@ -20,7 +20,7 @@ const featureCards = [
   },
   {
     imageSrc:
-      "https://cdn.prod.website-files.com/689d3e623c72de3de55d3877/68a0c265c3c1b8befeddd801_e2d2485679e9f3aebb46151c4d5d69f2_caregiver-exp-manager.webp",
+      "./bgimage1.jpg",
     altText: "Code Analysis View",
     title: "Context-Aware Code Audits",
     description:
@@ -54,7 +54,7 @@ const FeaturesSection = () => {
           <a
             href="#"
             role="button"
-            className="inline-block bg-[#047FB3] text-[#FFFFFF] font-semibold py-3 px-8 rounded-full transition-transform hover:scale-105"
+            className="inline-block bg-[#0ED8E3] text-[#FFFFFF] font-semibold py-3 px-8 rounded-md transition-transform hover:scale-105"
           >
             Get Started
           </a>
@@ -65,7 +65,7 @@ const FeaturesSection = () => {
           {featureCards.map((card, index) => (
             <div
               key={index}
-              className="bg-gray-100/80 p-6 rounded-2xl shadow-sm sticky top-32"
+              className="bg-gray-100 p-6 rounded-2xl shadow-sm sticky top-32"
             >
               <div className="mb-6 overflow-hidden rounded-lg">
                 <img

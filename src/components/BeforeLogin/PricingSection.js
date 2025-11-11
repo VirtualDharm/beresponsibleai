@@ -75,12 +75,12 @@ export default function PricingSection() {
 
         {/* Toggle */}
         <div className="mt-10 flex justify-center">
-          <div className="inline-flex rounded-full bg-white/10 p-1 text-sm font-semibold text-white">
+          <div className="inline-flex rounded-md bg-white/10 p-1 text-sm font-semibold text-white">
             <button
               type="button"
               onClick={() => setBilling("monthly")}
               className={classNames(
-                "px-4 py-1.5 rounded-full transition",
+                "px-4 py-1.5 rounded-md transition",
                 billing === "monthly"
                   ? "bg-indigo-600"
                   : "hover:bg-white/20 text-gray-300"
@@ -92,7 +92,7 @@ export default function PricingSection() {
               type="button"
               onClick={() => setBilling("annually")}
               className={classNames(
-                "px-4 py-1.5 rounded-full transition",
+                "px-4 py-1.5 rounded-md transition",
                 billing === "annually"
                   ? "bg-indigo-600"
                   : "hover:bg-white/20 text-gray-300"
