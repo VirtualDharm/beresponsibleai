@@ -5,11 +5,17 @@ import SignUpForm from '../auth/SignUpForm';
 
 // Data for the carousel
 const showcaseImages = [
-  "./image1.jpg",
-  "./image2.jpg",
-  "./image3.jpg",
-  "./image4.jpg",
-  "./image5.jpg",
+  "./image6.jpg",
+  "./image7.jpg",
+  "./image8.jpg",
+  "./image6.jpg",
+  "./image7.jpg",
+  "./image8.jpg",
+  "./image6.jpg",
+  "./image7.jpg",
+  "./image8.jpg",
+  // "./image4.jpg",
+  // "./image5.jpg",
   // "https://assets.emergent.sh/assets/showcase/1.png",
   // "https://assets.emergent.sh/assets/showcase/2.png",
   // "https://assets.emergent.sh/assets/showcase/3.png",

@@ -22,10 +22,67 @@ const ReactIcon = () => <svg {...commonIconProps} viewBox="0 0 24 24"><circle cx
 const GithubIcon = () => <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297 24 5.67 18.63 0 12 0"/></svg>;
 const SupabaseIcon = () => <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M12 4.015c-3.033 0-5.836 1.02-8.106 2.766L12 15.015l8.106-8.234C17.836 5.035 15.033 4.015 12 4.015zm0 15.97c-3.033 0-5.836-1.02-8.106-2.766L12 8.985l8.106 8.234c-2.27 1.746-5.073 2.766-8.106 2.766z"/></svg>;
 const FigmaIcon = () => <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M12 24a6 6 0 01-6-6v-6h6a6 6 0 110 12zM6 0a6 6 0 000 12h6V6a6 6 0 10-6-6zm6 6v6h6a6 6 0 10-6-6zm6 12a6 6 0 11-6-6 6 6 0 016 6zM6 12a6 6 0 016-6v6H6z" /></svg>;
+// --- Additional Icons ---
+const PythonIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M12 0C9.243 0 6 1.343 6 4v4h6v1H5c-2.757 0-5 2.243-5 5v5c0 2.757 3.243 5 6 5h1v-4H6c-1.654 0-3-1.346-3-3v-4c0-1.654 1.346-3 3-3h7c2.757 0 5-2.243 5-5V4c0-2.657-3.243-4-6-4zm-1 4c.553 0 1 .447 1 1s-.447 1-1 1-1-.447-1-1 .447-1 1-1zm2 16c-.553 0-1 .447-1 1s.447 1 1 1 1-.447 1-1-.447-1-1-1z"/></svg>
+);
+
+const NodeJSIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M11.998 0L2 5.998v12.004l9.998 6L22 18.002V5.998L11.998 0zM12 2.7l7.4 4.3v8l-7.4 4.3-7.4-4.3v-8L12 2.7zM10 7v7h1.5V8.5h1V14H14V7h-4z"/></svg>
+);
+
+const TypeScriptIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M1.125 0C.504 0 0 .504 0 1.125v21.75C0 23.496.504 24 1.125 24h21.75c.621 0 1.125-.504 1.125-1.125V1.125C24 .504 23.496 0 22.875 0H1.125zM14.25 12h-2.25v7.5h2.25V12zm-3.375 0H6v1.5h1.875V19.5H10.5V12zm5.625 5.25v.375h1.875v-.375c0-.621-.252-1.08-.75-1.38-.498-.3-1.17-.45-2.016-.45-.846 0-1.515.147-2.007.441-.492.294-.738.756-.738 1.386 0 .63.246 1.095.738 1.395.492.3 1.161.45 2.007.45.846 0 1.518-.15 2.016-.45.498-.3.75-.765.75-1.395v-.375h-1.875z"/></svg>
+);
+
+const FirebaseIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M3.89 18.66l2.42-14.43 3.71 7.17L3.89 18.66zm4.88-7.16L13.06 3.9l2.14 3.99-6.43-3.39 4.1 14.33zM18.6 21l-9.9-5.3 9.9-8.8L18.6 21z"/></svg>
+);
+
+const PostgreSQLIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M12 0c-5.523 0-10 4.252-10 9.5 0 4.1 2.672 7.548 6.438 8.909L8 24l4-3.333L16 24l-.438-5.591C19.328 17.048 22 13.6 22 9.5 22 4.252 17.523 0 12 0z"/></svg>
+);
+
+const AWSIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 256 256"><path d="M128 0L10 64v128l118 64 118-64V64zM64 96l64 36 64-36v72l-64 36-64-36z"/></svg>
+);
+
+const DockerIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M3 10h3V7H3v3zm4 0h3V7H7v3zm4 0h3V7h-3v3zm4 0h3V7h-3v3zm4 0h3V7h-3v3zM2 12h20v2H2zM4 16h16v2H4z"/></svg>
+);
+
+const SlackIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M6.33 15.66A1.66 1.66 0 1 1 4.67 14h1.66v1.66zm.83 0A1.66 1.66 0 0 1 7.16 14v-5A1.66 1.66 0 0 1 8.82 7.34a1.66 1.66 0 0 1 1.66 1.66v5a1.66 1.66 0 0 1-1.66 1.66H7.16zM15.66 17.67A1.66 1.66 0 0 1 14 19.33a1.66 1.66 0 0 1-1.66-1.66V16h1.66v1.67zm0-.83A1.66 1.66 0 0 1 14 15.18h-5A1.66 1.66 0 0 1 7.34 13.52 1.66 1.66 0 0 1 9 11.86h5a1.66 1.66 0 0 1 1.66 1.66v3.32z"/></svg>
+);
+
+const OpenAIIcon = () => (
+  <svg {...commonIconProps} viewBox="0 0 24 24"><path d="M12.001 0L1.5 6v12l10.501 6 10.499-6V6zM12 2.5l8 4.5v10l-8 4.5-8-4.5v-10l8-4.5z"/></svg>
+);
+
 // Add more icon components here if needed...
 
-const frameworks = [FlutterIcon, HtmlIcon, NextJSIcon, ReactIcon];
-const integrations = [GithubIcon, SupabaseIcon, FigmaIcon, /* ... other integration icons */];
+const frameworks = [
+  FlutterIcon,
+  HtmlIcon,
+  NextJSIcon,
+  ReactIcon,
+  NodeJSIcon,
+  PythonIcon,
+  TypeScriptIcon,
+  FirebaseIcon,
+  PostgreSQLIcon,
+];
+
+const integrations = [
+  GithubIcon,
+  SupabaseIcon,
+  FigmaIcon,
+  AWSIcon,
+  DockerIcon,
+  SlackIcon,
+  OpenAIIcon,
+];
+
 
 
 const MeetEmergentSection = () => {
@@ -151,6 +208,10 @@ const MeetEmergentSection = () => {
               <div className="group"><GithubIcon /></div>
               <div className="group"><SupabaseIcon /></div>
               <div className="group"><FigmaIcon /></div>
+              <div className="group"><AWSIcon /></div>
+              <div className="group"><DockerIcon /></div>
+              <div className="group"><SlackIcon /></div>
+              <div className="group"><OpenAIIcon /></div>
               {/* Add other integration icon components here */}
             </div>
           </div>
