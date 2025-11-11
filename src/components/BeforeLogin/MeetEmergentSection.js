@@ -94,7 +94,7 @@ const MeetEmergentSection = () => {
             <div className="flex w-full items-center justify-between px-5 pb-3 pt-3">
               <div className="flex gap-2">
                 {/* Attach Button */}
-                <button type="button" className="group relative flex h-[26px] w-[26px] cursor-pointer items-center justify-center rounded-md bg-black/10 text-black transition-colors hover:bg-black/20">
+                <button type="button" className="group relative flex h-[26px] w-[26px] cursor-pointer items-center justify-center rounded-md text-black transition-colors hover:bg-black/20">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" className="h-4 w-4"><path d="M209.66,122.34a8,8,0,0,1,0,11.32l-82.05,82a56,56,0,0,1-79.2-79.21L147.67,35.73a40,40,0,1,1,56.61,56.55L105,193A24,24,0,1,1,71,159L154.3,74.38A8,8,0,1,1,165.7,85.6L82.39,170.31a8,8,0,1,0,11.27,11.36L192.93,81A24,24,0,1,0,159,47L59.76,147.68a40,40,0,1,0,56.53,56.62l82.06-82A8,8,0,0,1,209.66,122.34Z"></path></svg>
                 </button>
                 {/* Import Button */}

@@ -47,7 +47,7 @@ const ChatHeader = () => {
           <span className="hidden text-sm text-gray-400 sm:block">{user?.email}</span>
           <button
             onClick={handleLogout}
-            className="rounded-md bg-[#047FB3] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]"
+            className="rounded-md bg-[#0DF9FF] px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]"
           >
             Sign Out
           </button>
