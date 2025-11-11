@@ -55,7 +55,7 @@ const AccordionItem = ({ faq, isOpen, onClick }) => {
       <div
         ref={contentRef}
         style={{ height: isOpen ? `${contentRef.current?.scrollHeight}px` : '0px' }}
-        className="overflow-hidden transition-height duration-300 ease-in-out"
+        className="overflow-hidden transition-[height] duration-300 ease-in-out"
       >
         <div className="pt-6 text-sm text-gray-300 sm:text-base">
           {faq.answer}

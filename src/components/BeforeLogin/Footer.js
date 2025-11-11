@@ -36,7 +36,7 @@ const Footer = () => {
 
             <div className="relative z-10 mx-auto max-w-7xl flex flex-col gap-16">
                 {/* Top Section: Headline and CTAs */}
-                <div className="dotted-background grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div className="bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:15px_15px] bg-[position:50%_50%] grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     <div className="flex flex-col gap-4">
                         <h2 className="text-5xl lg:text-6xl font-semibold text-white">
                             Join the Movement.<br />Code Responsibly.
@@ -81,7 +81,7 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Section: Copyright and Links */}
-                <div className="dotted-background border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <div className="bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[length:15px_15px] bg-[position:50%_50%] border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
                     <p className="text-gray-600">© 2024 BERESPONSIBLEAI. All rights reserved.</p>
                     <div className="flex gap-4">
                         <a href="#" className="hover:text-white">TERMS OF USE</a>
