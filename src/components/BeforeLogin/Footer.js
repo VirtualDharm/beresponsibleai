@@ -48,7 +48,7 @@ const Footer = () => {
                     <div className="flex flex-col gap-4">
                         <a href="https://www.linkedin.com/in/sharad-maheshwari-abdominal-imager/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-4 rounded-2xl bg-white p-4 text-black transition-transform hover:scale-[1.02]">
                             <div className="flex items-center gap-4">
-                                <img src="https://framerusercontent.com/images/pZQJZB1ojeD4oOn0w6DIf0AGaJU.png" alt="Demo" className="h-11 w-11 rounded-full"/>
+                                <img src="./founder4.jpeg" alt="Demo" className="h-11 w-11 rounded-md"/>
                                 <div>
                                     <p className="text-sm font-medium">Connect with the founder on LinkedIn.</p>
                                 </div>

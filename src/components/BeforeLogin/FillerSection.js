@@ -37,13 +37,13 @@ const Testimonial = {
   quote: "Responsible AI should be a right, not a privilege. Our mission is to put Responsible AI tools into the hands of thinkers and coders — before they write a single line of code.",
   author: "Dr. Sharad Maheshwari",
   title: "Founder, BeResponsibleAI & Radiologist",
-  authorImage: "https://framerusercontent.com/images/xoFIG6wSMMQfs7gvcNlR9GVaLck.jpg",
+  authorImage: "./founder3.jpeg",
   companyLogo: "./writer_image.png"
 };
 
 const FillerSection = () => {
   return (
-    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8" >
+    <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-12 text-center lg:text-left">
@@ -63,34 +63,46 @@ const FillerSection = () => {
           {/* Logos Grid */}
           <div className="grid grid-cols-2 gap-4">
             {logos.map((logo, index) => (
-              <div key={index} className="flex h-32 items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6">
-                <span className="text-center font-semibold text-gray-700">{logo.name}</span>
+              <div
+                key={index}
+                className="flex h-32 items-center justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6"
+              >
+                <span className="text-center font-semibold text-gray-700">
+                  {logo.name}
+                </span>
               </div>
             ))}
           </div>
 
           {/* Testimonial Card */}
-          <div className="relative rounded-2xl border border-gray-200 p-8">
-            <h3 className="mb-8 text-2xl font-medium text-gray-800">
-              "{Testimonial.quote}"
-            </h3>
-            <div className="flex items-center gap-4">
-              <img
-                src={Testimonial.companyLogo}
-                alt="Founder of BeResponsibleAI"
-                className="h-10 w-10"
-              />
-              <div>
-                <p className="font-semibold text-gray-900">{Testimonial.author}</p>
-                <p className="text-sm text-gray-600">{Testimonial.title}</p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-start rounded-2xl border border-gray-200 p-8 gap-8">
+            <div>
+              <h3 className="mb-8 text-2xl font-medium text-gray-800">
+                "{Testimonial.quote}"
+              </h3>
+              <div className="flex items-center gap-4">
+                <img
+                  src={Testimonial.companyLogo}
+                  alt="Founder of BeResponsibleAI"
+                  className="h-10 w-10"
+                />
+                <div>
+                  <p className="font-semibold text-gray-900">
+                    {Testimonial.author}
+                  </p>
+                  <p className="text-sm text-gray-600">{Testimonial.title}</p>
+                </div>
               </div>
             </div>
-            <div className="absolute bottom-0 right-0 h-48 w-48 lg:h-64 lg:w-64">
+
+            <div className="h-48 w-48 lg:h-64 lg:w-64">
               <img
                 src={Testimonial.authorImage}
                 alt={Testimonial.author}
-                className="h-full w-full object-cover object-left-top"
-                style={{ clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0 100%)' }}
+                className="h-full w-full object-cover object-left-top rounded-2xl"
+                style={{
+                  clipPath: "polygon(25% 0, 100% 0, 100% 100%, 0 100%)",
+                }}
               />
             </div>
           </div>
