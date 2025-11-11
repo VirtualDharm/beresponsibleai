@@ -94,7 +94,7 @@ const MeetEmergentSection = () => {
 
         {/* Top Banner & Headlines */}
         <div className="flex flex-col items-center gap-8 text-center">
-          <a target="_blank" rel="noopener noreferrer" className="mx-auto flex w-max items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-black transition-transform hover:scale-105 border border-gray-200" href="https://www.linkedin.com/posts/sharad-maheshwari-abdominal-imager_a-new-movement-called-beresonsibleai-activity-7380531219584782336-h2qD/">
+          <a target="_blank" rel="noopener noreferrer" className="mx-auto flex w-max items-center gap-2 rounded-lg bg-[#0DF9FF] px-4 py-2 text-black transition-transform hover:scale-105 border border-gray-200" href="https://www.linkedin.com/posts/sharad-maheshwari-abdominal-imager_a-new-movement-called-beresonsibleai-activity-7380531219584782336-h2qD/">
             <LuRocket className="h-4 w-4 text-gray-600" />
             <p className="text-[12px] font-medium uppercase leading-[150%] text-gray-700">A NEW MOVEMENT: BERESPONSIBLEAI</p>
             <LuArrowRight className="h-4 w-4 text-black" />
