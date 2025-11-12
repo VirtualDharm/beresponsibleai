@@ -17,12 +17,12 @@ const ChatHeader = () => {
   };
 
   return (
-    <header className="flex h-16 flex-shrink-0 items-center justify-between border-b border-slate-700 bg-[#111111] px-6">
+    <header className="flex h-16 flex-shrink-0 items-center justify-end border-b border-slate-700 bg-[#111111] px-6">
       {/* GPT Model Selector (from original design) */}
-      <div className="flex items-center gap-2">
+      {/* <div className="flex items-center gap-2">
         <span className="text-sm font-semibold text-white">GPT 4</span>
         <ArrowDownIcon />
-      </div>
+      </div> */}
 
       {/* Controls (from original design) + User Info and Logout */}
       <div className="flex items-center gap-4">
@@ -34,13 +34,13 @@ const ChatHeader = () => {
             className="w-full rounded-lg bg-slate-700 py-1.5 pl-9 pr-4 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
-        <button className="text-gray-400 hover:text-white"><MoonIcon /></button>
+        {/* <button className="text-gray-400 hover:text-white"><MoonIcon /></button>
         <button className="text-gray-400 hover:text-white"><AppIcon /></button>
         <button className="text-gray-400 hover:text-white"><BellIcon /></button>
 
         <button className="rounded-lg bg-[#0ED8E3] px-4 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
           Try AI Pro
-        </button>
+        </button> */}
 
         {/* User Info and Logout Button */}
         <div className="flex items-center gap-3 border-l border-slate-700 pl-4">
