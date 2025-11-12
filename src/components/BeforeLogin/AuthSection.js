@@ -143,10 +143,10 @@ const AuthSection = () => {
         loop
         muted
         playsInline
-        className="absolute inset-0 h-full w-full object-cover scale-[1.22]"
+        className="absolute inset-0 h-full w-full object-cover"
       >
         <source
-          src="https://assets.emergent.sh/assets/videos/clouds.mp4"
+          src="./bgvideo1.mp4"
           type="video/mp4"
         />
       </video>

@@ -1,16 +1,30 @@
 import React from 'react';
 import ChatHeader from './ChatHeader';
 import WelcomeScreen from './WelcomeScreen';
-// In a real app, you would have state here to switch between WelcomeScreen and ChatView
-// const [activeChat, setActiveChat] = useState(null);
+import ChatView from './ChatView';
+import AccountSettings from './AccountSettings';
 
-const MainContent = () => {
+// The component is simplified, it just passes props down
+const MainContent = ({ activeView, activeChatId, onNewChat }) => {
+    
+  const renderContent = () => {
+    if (activeView === 'settings') {
+      return <AccountSettings />;
+    }
+    
+    if (activeChatId) {
+      return <ChatView chatId={activeChatId} />;
+    }
+    
+    // Pass onNewChat to WelcomeScreen
+    return <WelcomeScreen onNewChat={onNewChat} />;
+  };
+
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col bg-[#000000]">
       <ChatHeader />
-      <div className="flex-1 overflow-y-auto p-6">
-        {/* Conditionally render WelcomeScreen or ChatView here */}
-        <WelcomeScreen />
+      <div className="flex-1 overflow-y-auto">
+        {renderContent()}
       </div>
     </div>
   );

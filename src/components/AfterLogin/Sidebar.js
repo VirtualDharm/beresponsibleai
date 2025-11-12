@@ -1,14 +1,34 @@
-import React from 'react';
-import { HomeIcon, MessagesIcon, PluginsIcon, HistoryIcon, SettingsIcon, UserIcon, PlusIcon, StarIcon, ArchiveIcon, SearchIcon } from './Icons';
+import React, { useState, useEffect } from 'react';
+import { supabase } from '../../lib/supabaseClient';
+import { useAuth } from '../../context/AuthContext';
+import { PlusIcon, StarIcon, ArchiveIcon, PluginsIcon, SettingsIcon } from './Icons';
 
-const Sidebar = () => {
-  const recentChats = [
-    "Can you fly?",
-    "Do you have emotions?",
-    "Will robots take over the world?",
-    "What's the meaning of life?",
-    "Can you write a song?",
-  ];
+const Sidebar = ({ setActiveView, setActiveChatId, activeChatId }) => {
+  const { user } = useAuth();
+  const [chats, setChats] = useState([]);
+
+  useEffect(() => {
+    const fetchChats = async () => {
+      if (user) {
+        const { data, error } = await supabase
+          .from('chats')
+          .select('id, title')
+          .order('created_at', { ascending: false });
+
+        if (error) {
+          console.error('Error fetching chats:', error);
+        } else {
+          setChats(data);
+        }
+      }
+    };
+    fetchChats();
+  }, [user]);
+
+  const handleNewChat = () => {
+    setActiveChatId(null);
+    setActiveView('chat');
+  };
 
   return (
     <div className="flex h-full w-64 flex-shrink-0 flex-col bg-[#111111] p-4">
@@ -22,7 +42,7 @@ const Sidebar = () => {
       </div>
 
       {/* New Chat Button */}
-      <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-[#0ED8E3] py-2 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
+      <button onClick={handleNewChat} className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-[#047FB3] py-2 text-sm font-semibold text-white transition-colors hover:bg-[#036a9a]">
         <PlusIcon />
         New Chat
       </button>
@@ -50,19 +70,27 @@ const Sidebar = () => {
       <div className="flex-grow overflow-y-auto">
         <h2 className="mb-2 text-xs font-semibold uppercase text-gray-500">Recent Chats</h2>
         <div className="space-y-1">
-          {recentChats.map((chat, index) => (
-            <a key={index} href="#" className="block truncate rounded-md px-2 py-1.5 text-sm text-gray-400 hover:bg-slate-700 hover:text-white">
-              {chat}
-            </a>
+          {chats.map((chat) => (
+            <button
+              key={chat.id}
+              onClick={() => setActiveChatId(chat.id)}
+              className={`w-full text-left truncate rounded-md px-2 py-1.5 text-sm  transition-colors ${activeChatId === chat.id ? 'bg-slate-700 text-white' : 'text-gray-400 hover:bg-slate-700 hover:text-white'}`}
+            >
+              {chat.title || 'New Chat'}
+            </button>
           ))}
         </div>
       </div>
 
-      {/* User Profile */}
-      <div className="mt-auto border-t border-slate-700 pt-4">
+      {/* Settings and User Profile */}
+      <div className="mt-auto border-t border-slate-700 pt-4 space-y-2">
+         <button onClick={() => setActiveView('settings')} className="flex w-full items-center gap-2 rounded-md p-2 text-gray-400 hover:bg-slate-700 hover:text-white">
+           <SettingsIcon />
+           <span className="text-sm font-medium">Settings</span>
+         </button>
         <a href="#" className="flex items-center gap-2 rounded-md p-2 hover:bg-slate-700">
-          <img src="https://i.pravatar.cc/32" alt="User Avatar" className="h-8 w-8 rounded-md" />
-          <span className="text-sm font-medium text-white">John Doe</span>
+          <img src={user?.user_metadata?.avatar_url || `https://i.pravatar.cc/32?u=${user?.id}`} alt="User Avatar" className="h-8 w-8 rounded-md" />
+          <span className="text-sm font-medium text-white">{user?.user_metadata?.full_name || user?.email}</span>
         </a>
       </div>
     </div>

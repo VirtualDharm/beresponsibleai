@@ -1,14 +1,9 @@
+// src/pages/DashboardPage.js
 import React from 'react';
-import Sidebar from '../components/AfterLogin/Sidebar';
-import MainContent from '../components/AfterLogin/MainContent';
+import DashboardLayout from '../components/AfterLogin/DashboardLayout';
 
 const DashboardPage = () => {
-  return (
-    <div className="flex h-screen w-full bg-[#000000] text-gray-300 font-sans">
-      <Sidebar />
-      <MainContent />
-    </div>
-  );
+  return <DashboardLayout />;
 };
 
 export default DashboardPage;
